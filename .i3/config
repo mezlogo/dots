@@ -1,0 +1,198 @@
+set $mod Mod4
+
+bindsym XF86AudioLowerVolume exec "amixer -M set Master 5%- ; pkill -RTMIN+1 i3blocks"
+bindsym $mod+o exec "amixer -M set Master 5%- ; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec "amixer -M set Master 5%+ ; pkill -RTMIN+1 i3blocks"
+bindsym $mod+p exec "amixer -M set Master 5%+ ; pkill -RTMIN+1 i3blocks"
+bindsym $mod+Shift+o exec "bright.sh -0.05"
+bindsym $mod+Shift+p exec "bright.sh 0.05"
+
+new_window pixel 1
+new_float pixel 1
+
+font pango:DejaVuSansMono 12
+
+focus_follows_mouse no
+
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+
+floating_modifier $mod
+
+bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+d exec rofi -theme DarkBlue -show drun -lines 20
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+v split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen
+
+bindsym $mod+m move workspace to output left
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+hide_edge_borders smart
+
+
+set $workspace1 "1:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace9 "9:"
+set $workspace0 "10:"
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace0
+
+assign [class="FF_DEFAULT"] $workspace1
+assign [class="FF_SOCIAL"] $workspace3
+assign [class="FF_WORK"] $workspace4
+assign [class="Pidgin"] $workspace9
+assign [class="Thunderbird"] $workspace9
+assign [class="jetbrains-idea"] $workspace0
+
+bindsym $mod+Shift+r exec on_restart_i3wm.sh
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+    status_command i3blocks
+    position top
+    mode hide
+    hidden_state hide
+    modifier $mod
+    colors {
+        background #000000
+        statusline #00FF00
+        separator #77FF77
+        #                  border  backgr. text
+        focused_workspace  #000000 #000000 #00ff00
+        active_workspace   #000000 #000000 #bf00ff
+        inactive_workspace #000000 #000000 #ffffff
+        urgent_workspace   #000000 #000000 #00bfff
+    }
+}
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #00ff00 #285577 #ffffff #2e9ef4   #285577
+client.unfocused        #000000 #222222 #888888 #292d2e   #222222
+
+exec clipit
+
+#exec "setxkbmap -layout us,ru -option 'grp:caps_toggle,grp_led:caps'"
+exec "xkbcomp -w 0 ~/.config/xkb/xkbdump $DISPLAY"
+
+mode "mouse" {
+
+    # set your three speeds here
+
+    set $slow 5
+    set $quick 40
+
+    # Mouse movement (slow/fine-tuned) -- vim keybindings
+
+    bindsym h exec xdotool mousemove_relative -- -$slow 0
+    bindsym j exec xdotool mousemove_relative 0 $slow
+    bindsym k exec xdotool mousemove_relative -- 0 -$slow
+    bindsym l exec xdotool mousemove_relative $slow 0
+
+    # Mouse movement (quicker) -- vim keybindings
+
+    bindsym Shift+h exec xdotool mousemove_relative -- -$quick 0
+    bindsym Shift+j exec xdotool mousemove_relative 0 $quick
+    bindsym Shift+k exec xdotool mousemove_relative -- 0 -$quick
+    bindsym Shift+l exec xdotool mousemove_relative $quick 0
+
+    # Left Click
+    bindsym f exec xdotool click 1
+
+    # Middle Click
+    bindsym d exec xdotool click 2
+
+    # Right Click
+    bindsym s exec xdotool click 3
+
+    # Left Click-and-drag
+    bindsym Shift+f exec xdotool mousedown 1
+
+    # Middle Click-and-drag 
+    bindsym Shift+d exec xdotool mousedown 2
+
+    # Right Click-and-drag
+    bindsym Shift+s exec xdotool mousedown 3
+
+    # Left Drag release
+    bindsym $mod2+f exec xdotool mouseup 1
+
+    # Middle Drag release
+    bindsym $mod2+d exec xdotool mouseup 2
+
+    # Right Drag release
+    bindsym $mod2+s exec xdotool mouseup 3
+
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+m mode "mouse"

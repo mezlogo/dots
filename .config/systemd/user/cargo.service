@@ -1,0 +1,7 @@
+[Unit]
+Description=Cargo webapps daemon
+
+[Service]
+ExecStartPre=rm -rf /tmp/cargo
+ExecStart=java -Ddaemon.home=/tmp/cargo -jar %h/.m2/repository/org/codehaus/cargo/cargo-daemon-webapp/1.7.0/cargo-daemon-webapp-1.7.0.war
+ExecStop=rm -rf /tmp/cargo

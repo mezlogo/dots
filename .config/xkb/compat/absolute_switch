@@ -1,0 +1,9 @@
+default xkb_compatibility "abs" {
+    interpret KP_1 {
+        repeat=False;
+        action= SetGroup(group=+2);
+    };
+    interpret Mode_switch {
+        action= SetGroup(group=+1);
+    };
+};

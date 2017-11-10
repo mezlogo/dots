@@ -1,0 +1,14 @@
+#BUILD TOOLS OUTPUT
+build
+target
+artifacts
+dist
+node_modules
+
+#TMP FILES
+~*
+*~
+
+#IDEA
+.idea
+*.iml

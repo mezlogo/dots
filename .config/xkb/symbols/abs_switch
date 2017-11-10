@@ -1,0 +1,9 @@
+partial modifier_keys
+xkb_symbols "ralt_lv3" {
+    key <RALT> {
+        type= "ONE_GROUP",
+        symbols[Group1] = [ Mode_switch ],
+        symbols[Group2] = [ KP_1 ]
+    };
+};
+

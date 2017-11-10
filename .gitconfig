@@ -1,0 +1,24 @@
+[core]
+    autocrlf = input
+    excludesfile = ~/.gitignore
+[alias]
+    rst = reset --hard origin/master
+    po = push origin
+    pom = push origin master
+    pfom = pull -f -p origin master
+    f = fetch -p
+    co = checkout
+    br = branch
+    st = status
+    cm = commit -m
+    ca = commit --amend --no-edit
+    cam = commit -am
+    caa = commit --all --amend --no-edit
+    ll = log --pretty=format:"%Cgreen%h%Cred%cr%<(24)%C(#ff69b4)%an%C(white)%d%n%C(yellow)%s" --numstat
+    ls = log --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --date=relative
+    lg = log --graph --pretty=format:'%C(yellow)%d%Creset %C(cyan)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all
+    t = describe --abbrev=0 --tags HEAD
+    bdiff = "!f(){ git diff $(git merge-base $1 HEAD) $1; };f"
+    cap = "!git cam 'New version' && git pom"
+[include]
+    path = .gitconfig.local
