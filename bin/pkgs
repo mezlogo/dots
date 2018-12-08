@@ -1,0 +1,21 @@
+#!/bin/bash
+
+pkgsList="$HOME/.config/pkgs.list"
+
+actualPkgs() { pacman -Qqe | sort; }
+
+diffPkgs() { comm -$1 -3 <(actualPkgs) $pkgsList ; } 
+
+delete() { diffPkgs 2; }
+install() { diffPkgs 1; }
+
+case "$1" in
+  import)
+    [[ ! -z $(delete) ]] && sudo pacman -Rns "$(delete)" || echo nothing to delete
+    [[ ! -z $(install) ]] && pacaur -S --needed "$(install)" || echo nothing to install
+    ;;
+  export) actualPkgs > $pkgsList ;;
+  delete) delete ;;
+  install) install ;;
+  *) echo no options matched ;;
+esac
