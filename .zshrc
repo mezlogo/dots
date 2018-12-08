@@ -55,7 +55,6 @@ export PURE_CMD_MAX_EXEC_TIME=2
 source ~/.zsh_plugins
 source ~/wrk/wrk.zsh
 
-HISTORY_IGNORE='jrnl *'
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
@@ -66,15 +65,6 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 export MAVEN_OPTS='-Xmx4G'
-
-alias print_installed='comm -13 ~/.pkgs/ignore.pkgs <(pacman -Qeq | sort)'
-alias print_declared='cat ~/.pkgs/declared.pkgs'
-alias print_new='comm -23 <(print_declared) <(print_installed)'
-alias print_deprecated='comm -23 <(print_installed) <(print_declared)'
-alias export_pkgs='print_installed > ~/.pkgs/declared.pkgs'
-alias remove_deprecated='pacaur -Rns $(print_deprecated)'
-alias install_new='pacaur -S --needed --noedit $(print_new)'
-
 
 alias ll='ls -al'
 alias vim='nvim'
