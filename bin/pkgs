@@ -11,11 +11,11 @@ install() { diffPkgs 1; }
 
 case "$1" in
   import)
-    [[ ! -z $(delete) ]] && sudo pacman -Rns "$(delete)" || echo nothing to delete
-    [[ ! -z $(install) ]] && pacaur -S --needed "$(install)" || echo nothing to install
+    [[ ! -z $(delete) ]] && sudo pacman -Rns $(delete) || echo nothing to delete
+    [[ ! -z $(install) ]] && pacaur -S --needed $(install) || echo nothing to install
     ;;
   export) actualPkgs > $pkgsList ;;
-  delete) delete ;;
+  delete) echo "$(delete)" ;;
   install) install ;;
-  *) echo no options matched ;;
+  *) echo "$(actualPkgs)" ;;
 esac

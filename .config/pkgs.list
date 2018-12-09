@@ -21,6 +21,7 @@ intel-ucode
 jdk8-openjdk
 linux-headers
 maven
+mesa
 neovim
 ntfs-3g
 openbsd-netcat
