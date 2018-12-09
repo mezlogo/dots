@@ -3,7 +3,6 @@ alsa-utils
 antibody
 chromium
 clipit
-cower
 deepin-screenshot
 docker
 docker-compose
@@ -29,7 +28,7 @@ openconnect
 openjdk8-src
 openssh
 otf-font-awesome
-pacaur
+pakku
 pass
 pidgin
 profile-sync-daemon
