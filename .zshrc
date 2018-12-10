@@ -30,9 +30,6 @@ bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 bindkey -e
 
-autoload -Uz compinit
-compinit
-
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
 
 export EDITOR=nvim
@@ -40,10 +37,6 @@ export VISUAL=nvim
 
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
-export PURE_GIT_PULL=0
-export PURE_GIT_UNTRACKED_DIRTY=0
-export PURE_CMD_MAX_EXEC_TIME=2
 
 source ~/.zsh_plugins
 source ~/wrk/wrk.zsh
@@ -67,6 +60,17 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=$HOME/.zsh_history
 
+autoload -Uz compinit && compinit
+autoload -Uz vcs_info
+zstyle ':vcs_info:git*' formats "%b"
+precmd() { vcs_info }
+
+PROMPT='%(?.%F{blue}.%F{red})%B%#%f%b '
+RPROMPT='%F{yello}%B%~ %F{white}${vcs_info_msg_0_}%b%f'
+setopt prompt_subst
+
+#export REPORTTIME=0
+#
 export MAVEN_OPTS='-Xmx4G'
 
 alias ll='ls -al'
