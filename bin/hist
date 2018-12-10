@@ -6,7 +6,7 @@ compare_local() { compare 2; }
 compare_remote() { compare 1; }
 
 case "$1" in
-  export) cp ~/.zsh_history ~/.zsh_history_remote ;;
+  export) current_hist > ~/.zsh_history_remote ;;
   local) compare_local ;;
   remote) compare_remote ;;
   *) current_hist ;;
