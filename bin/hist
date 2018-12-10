@@ -1,12 +1,17 @@
 #!/bin/bash
 
-current_hist() { sort ~/.zsh_history | uniq; }
-compare() { comm -3 -$1 <(current_hist) ~/.zsh_history_remote; } 
+LHIST="$HOME/.zsh_history"
+RHIST="$HOME/.zsh_history_remote"
+BHIST="$HOME/.zsh_history_bkp"
+
+current_hist() { sort $LHIST | uniq; }
+compare() { comm -3 -$1 <(current_hist) $RHIST; } 
 compare_local() { compare 2; }
 compare_remote() { compare 1; }
 
 case "$1" in
-  export) current_hist > ~/.zsh_history_remote ;;
+  import) cp $LHIST $BHIST && cp $RHIST $LHIST ;;
+  export) current_hist > $RHIST ;;
   local) compare_local ;;
   remote) compare_remote ;;
   *) current_hist ;;
