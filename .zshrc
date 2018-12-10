@@ -55,15 +55,25 @@ export PURE_CMD_MAX_EXEC_TIME=2
 source ~/.zsh_plugins
 source ~/wrk/wrk.zsh
 
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=20000
-SAVEHIST=20000
+#===HISTORY_BLOCK===
+#turn off ksh-like !!
+unsetopt bang_hist
+#turn off modifiers like `print /usr/bin/cat(:t)`
+unsetopt bare_glob_qual
 
-setopt HIST_IGNORE_SPACE
-setopt HIST_VERIFY
-setopt HIST_REDUCE_BLANKS
-setopt HIST_IGNORE_ALL_DUPS
-setopt SHARE_HISTORY
+setopt inc_append_history
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+setopt hist_reduce_blanks
+setopt hist_ignore_space
+unsetopt hist_save_by_copy
+unsetopt append_history
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=$HOME/.zsh_history
+
 export MAVEN_OPTS='-Xmx4G'
 
 alias ll='ls -al'

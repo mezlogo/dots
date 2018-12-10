@@ -7,17 +7,20 @@ deepin-screenshot
 docker
 docker-compose
 expac
+expect
 fd
 firefox
 fzf
 git
 gradle
 groovy
+hss
 htop
 i3blocks
 i3-wm
 intel-ucode
 jdk8-openjdk
+jq
 linux-headers
 maven
 mesa
@@ -31,7 +34,6 @@ otf-font-awesome
 pakku
 pass
 pidgin
-profile-sync-daemon
 qt5ct
 rclone
 ripgrep
@@ -46,7 +48,6 @@ unrar
 unzip
 vagrant
 virtualbox
-virtualbox-ext-oracle
 virtualbox-host-modules-arch
 vlc
 wget

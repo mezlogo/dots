@@ -12,7 +12,7 @@ install() { diffPkgs 1; }
 case "$1" in
   import)
     [[ ! -z $(delete) ]] && sudo pacman -Rns $(delete) || echo nothing to delete
-    [[ ! -z $(install) ]] && pacaur -S --needed $(install) || echo nothing to install
+    [[ ! -z $(install) ]] && pakku -S --needed $(install) || echo nothing to install
     ;;
   export) actualPkgs > $pkgsList ;;
   delete) echo "$(delete)" ;;
