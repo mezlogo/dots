@@ -6,7 +6,7 @@ fi
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
-if [ -z $TMUX ] && [[ $(tty) = /dev/tty1 ]]; then
+if [ -z $TMUX ]; then
   exec tmux new-session -A -s default
 fi
 
