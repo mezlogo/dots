@@ -22,24 +22,6 @@ setopt complete_in_word # Allow completion from within a word/phrase
 
 unsetopt menu_complete # do not autoselect the first completion entry
 
-# ===== Prompt
-setopt prompt_subst # Enable parameter expansion, command substitution, and arithmetic expansion in the prompt
-setopt transient_rprompt # only show the rprompt on the current prompt
-
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
-
-bindkey -v
-export KEYTIMEOUT=1
-
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
 
 export EDITOR=nvim
@@ -70,17 +52,37 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=$HOME/.zsh_history
 
+#===PROMPT_BLOCK===
+setopt prompt_subst
 autoload -Uz compinit && compinit
 autoload -Uz vcs_info
 zstyle ':vcs_info:git*' formats "%b"
-precmd() { vcs_info }
 
-PROMPT='%(?.%F{blue}.%F{red})%B%#%f%b '
-RPROMPT='%B%F{white}${vcs_info_msg_0_} %F{yello}%~%b%f'
-setopt prompt_subst
+bindkey -v
+export KEYTIMEOUT=1
 
-export REPORTTIME=0
-#
+bindkey -M viins '^P' history-substring-search-up
+bindkey -M viins '^N' history-substring-search-down
+bindkey -M viins '^E' end-of-line
+bindkey -M viins '^A' beginning-of-line
+
+precmd() {
+  vcs_info
+  timer=${timer:-0}
+  timer_show=$(($SECONDS - $timer))
+  RPROMPT='%B%F{white}${vcs_info_msg_0_} ${timer_show} %F{yello}%~%b%f'
+}
+preexec() {
+  timer=$SECONDS
+}
+
+function zle-line-init zle-keymap-select {
+  PROMPT='%(?.%F{blue}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f '
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
 export MAVEN_OPTS='-Xmx4G'
 
 alias ll='ls -al'
