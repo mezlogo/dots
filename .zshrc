@@ -26,9 +26,19 @@ unsetopt menu_complete # do not autoselect the first completion entry
 setopt prompt_subst # Enable parameter expansion, command substitution, and arithmetic expansion in the prompt
 setopt transient_rprompt # only show the rprompt on the current prompt
 
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-bindkey -e
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+
+bindkey -v
+export KEYTIMEOUT=1
+
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
 
@@ -66,10 +76,10 @@ zstyle ':vcs_info:git*' formats "%b"
 precmd() { vcs_info }
 
 PROMPT='%(?.%F{blue}.%F{red})%B%#%f%b '
-RPROMPT='%F{yello}%B%~ %F{white}${vcs_info_msg_0_}%b%f'
+RPROMPT='%B%F{white}${vcs_info_msg_0_} %F{yello}%~%b%f'
 setopt prompt_subst
 
-#export REPORTTIME=0
+export REPORTTIME=0
 #
 export MAVEN_OPTS='-Xmx4G'
 
