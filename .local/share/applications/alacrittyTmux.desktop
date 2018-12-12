@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=alacritty -e zsh -ic 'tmux new-session -A -s default'
+Name=Alacritty with tmux
+Terminal=false
+Type=Application
