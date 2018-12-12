@@ -11,6 +11,11 @@ if [ -z $TMUX ]; then
 fi
 
 alias wrk='git -C ~/wrk'
+alias alma='git -C ~/alma'
+
+alias -g L='| less'
+alias -g W='| wc -l'
+alias -g S='| sort | uniq -c | sort -nr'
 
 unsetopt auto_cd
 
