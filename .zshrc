@@ -71,6 +71,8 @@ bindkey -M viins '^N' history-substring-search-down
 bindkey -M viins '^E' end-of-line
 bindkey -M viins '^A' beginning-of-line
 bindkey -M viins '^[.' insert-last-word
+bindkey -M viins '^Q' vi-backward-word
+bindkey -M viins '^F' vi-forward-word
 
 precmd() {
   vcs_info
