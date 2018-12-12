@@ -65,6 +65,7 @@ bindkey -M viins '^P' history-substring-search-up
 bindkey -M viins '^N' history-substring-search-down
 bindkey -M viins '^E' end-of-line
 bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^[.' insert-last-word
 
 precmd() {
   vcs_info
@@ -89,3 +90,4 @@ alias ll='ls -al'
 alias vim='nvim'
 alias vi='nvim'
 
+stty -ixon -ixoff
