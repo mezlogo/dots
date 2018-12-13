@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+GIT=$2
+
+echo git: $GIT
+
+case "$1" in
+    import) $GIT fetch && $GIT rebase --autostash origin/master;;
+    export) $GIT commit -am "New version" && $GIT push origin master;;
+    st) $GIT status -s;;
+esac

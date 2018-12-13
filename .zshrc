@@ -91,3 +91,8 @@ alias vim='nvim'
 alias vi='nvim'
 
 stty -ixon -ixoff
+
+alias repos="echo 'yadm\nwrk\nprv'"
+alias gst='repos | xargs -L 1 gsync st'
+alias gimprt='repos | xargs -L 1 gsync import'
+alias gexmprt='repos | xargs -L 1 gsync export'
