@@ -4,3 +4,6 @@ set listchars=eol:$,tab:>-,trail:~,space:.,extends:>,precedes:<
 set list
 
 set number
+
+set nocompatible
+filetype plugin on
