@@ -78,7 +78,7 @@ preexec() {
 }
 
 function zle-line-init zle-keymap-select {
-  PROMPT='%(?.%F{blue}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f '
+  PROMPT='%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f '
   zle reset-prompt
 }
 zle -N zle-line-init
