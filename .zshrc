@@ -10,6 +10,8 @@ alias -g L='| less'
 alias -g W='| wc -l'
 alias -g S='| sort | uniq -c | sort -nr'
 
+alias cat="bat"
+
 unsetopt auto_cd
 
 # ===== Completion
