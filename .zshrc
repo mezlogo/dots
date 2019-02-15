@@ -98,3 +98,9 @@ alias repos="echo 'yadm\nwrk\nprv'"
 alias gst='repos | xargs -L 1 gsync st'
 alias gimprt='repos | xargs -L 1 gsync import'
 alias gexmprt='repos | xargs -L 1 gsync export'
+
+copy-to-xsel() {
+  zle kill-buffer
+  print -rn -- $CUTBUFFER | xsel -ib
+}; zle -N copy-to-xsel
+bindkey -M viins "^Y" copy-to-xsel
