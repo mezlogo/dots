@@ -1,8 +1,12 @@
 alacritty-git
 alsa-utils
+android-tools
 antibody
+autojump
+cdrtools
 chromium
 clipit
+darktable
 deepin-screenshot
 docker
 docker-compose
@@ -12,6 +16,7 @@ fd
 firefox
 fzf
 git
+gnome-system-monitor
 gradle
 groovy
 hss
@@ -22,6 +27,7 @@ intel-ucode
 jdk8-openjdk
 jq
 kotlin
+krita
 linux-headers
 maven
 mesa
@@ -36,6 +42,7 @@ otf-font-awesome
 pakku
 pass
 pidgin
+pinta
 qt5ct
 rclone
 ripgrep
