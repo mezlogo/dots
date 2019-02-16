@@ -1,0 +1,11 @@
+gradle.projectsEvaluated { Gradle gradle ->
+  gradle.rootProject.allprojects { Project project ->
+    if (project.pluginManager.hasPlugin('java')) {
+      project.task([type: JavaExec], 'r', {
+        main = "Main"
+        classpath = project.sourceSets.main.runtimeClasspath
+      })
+    }
+  }
+}
+
