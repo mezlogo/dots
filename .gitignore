@@ -4,6 +4,8 @@ target
 artifacts
 dist
 node_modules
+out
+.env
 
 #TMP FILES
 ~*
