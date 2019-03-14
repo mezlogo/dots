@@ -9,6 +9,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 alias -g L='| less'
 alias -g W='| wc -l'
 alias -g S='| sort | uniq -c | sort -nr'
+alias -g X='| xsel -b'
 
 alias cat="bat"
 
@@ -94,7 +95,7 @@ alias vi='nvim'
 
 stty -ixon -ixoff
 
-alias repos="echo 'yadm\nwrk\nprv'"
+alias repos="echo 'alma\nyadm\nwrk\nprv'"
 alias gst='repos | xargs -L 1 gsync st'
 alias gimprt='repos | xargs -L 1 gsync import'
 alias gexmprt='repos | xargs -L 1 gsync export'
