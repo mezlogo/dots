@@ -33,7 +33,7 @@ export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 source ~/.zsh_plugins
-source "$HOME/wrk/panenv.source"
+source "$HOME/wrk/data/pan.env"
 
 #===HISTORY_BLOCK===
 #turn off ksh-like !!
