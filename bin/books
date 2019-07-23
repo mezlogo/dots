@@ -1,0 +1,2 @@
+#!/bin/env bash
+git -C $HOME/books "$@"
