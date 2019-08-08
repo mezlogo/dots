@@ -20,5 +20,6 @@
     t = describe --abbrev=0 --tags HEAD
     bdiff = "!f(){ git diff $(git merge-base $1 HEAD) $1; };f"
     cap = "!git cam 'New version' && git pom"
+    brs = "!git reflog show --since=\"14 days ago\" --all | awk '{if(\"checkout:\" == $3) print($6 \"\\n\" $8)}' | sort | uniq"
 [include]
     path = .gitconfig.local
