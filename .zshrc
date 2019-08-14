@@ -108,3 +108,7 @@ copy-to-xsel() {
   print -rn -- $CUTBUFFER | xsel -ib
 }; zle -N copy-to-xsel
 bindkey -M viins "^Y" copy-to-xsel
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
