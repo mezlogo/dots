@@ -34,6 +34,8 @@ export VISUAL=nvim
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 source ~/.zsh_plugins
 source "$wrk/data/pan.env"
 
@@ -108,7 +110,4 @@ copy-to-xsel() {
   print -rn -- $CUTBUFFER | xsel -ib
 }; zle -N copy-to-xsel
 bindkey -M viins "^Y" copy-to-xsel
-
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
 
