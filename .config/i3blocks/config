@@ -1,0 +1,54 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+separator_block_width=15
+markup=none
+
+[volume]
+label=♪
+instance=Master
+command=$HOME/.config/i3blocks/volume.sh
+interval=once
+signal=1
+
+[memory]
+command=awk '/MemAvailable/ { printf "%dMb\n", $2 / 1024 }' /proc/meminfo
+label=
+interval=5
+
+[disk]
+command=df -h | awk '/\/home$/ { print $5 }'
+label=
+interval=10
+
+[load_average]
+command=cut -d ' ' -f1 /proc/loadavg
+label=
+interval=5
+
+[time]
+command=date '+%H:%M:%S'
+interval=1
