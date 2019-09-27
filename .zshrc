@@ -1,6 +1,6 @@
 export wrk=$HOME/wrk
 export alma=$alma
-export PATH=$wrk/projects:$HOME/bin:$PATH
+export PATH=$wrk/bin:$HOME/bin:$PATH
 
 if [ ! -f ~/.zsh_plugins ]; then
     antibody bundle < ~/.zsh_bundles > ~/.zsh_plugins
