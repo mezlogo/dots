@@ -94,7 +94,8 @@ zle -N zle-keymap-select
 
 export MAVEN_OPTS='-Xmx4G'
 
-alias ll='ls -al'
+alias ll='ls -alF --color=always'
+alias ls='ls -F --color=always'
 alias vim='nvim'
 alias vi='nvim'
 
@@ -111,3 +112,13 @@ copy-to-xsel() {
 }; zle -N copy-to-xsel
 bindkey -M viins "^Y" copy-to-xsel
 
+n() {
+    export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
+
+    nnn "$@"
+
+    if [ -f $NNN_TMPFILE ]; then
+            . $NNN_TMPFILE
+            rm $NNN_TMPFILE
+    fi
+}
