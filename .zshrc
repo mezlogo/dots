@@ -38,6 +38,7 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 source ~/.zsh_plugins
 source "$wrk/data/pan.env"
+source /opt/navi/navi.plugin.zsh
 
 #===HISTORY_BLOCK===
 #turn off ksh-like !!
@@ -93,6 +94,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 export MAVEN_OPTS='-Xmx4G'
+export NAVI_PATH="$HOME/.local/share/navi"
 
 alias ll='ls -alF --color=always'
 alias ls='ls -F --color=always'

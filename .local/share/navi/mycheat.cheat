@@ -1,0 +1,6 @@
+% mytag, hello
+
+# Look at me
+git -C ~/pan/panbet log <branch>
+
+$ branch: git -C ~/pan/panbet branch
