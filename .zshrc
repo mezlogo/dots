@@ -1,7 +1,3 @@
-export wrk=$HOME/wrk
-export alma=$alma
-export PATH=$wrk/bin:$HOME/bin:$PATH
-
 if [ ! -f ~/.zsh_plugins ]; then
     antibody bundle < ~/.zsh_bundles > ~/.zsh_plugins
 fi
@@ -37,8 +33,10 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 source ~/.zsh_plugins
-source "$wrk/data/pan.env"
+source "$HOME/wrk/bin/panbet.env"
 source /opt/navi/navi.plugin.zsh
+
+export PATH=$WRK/bin:$HOME/bin:$PATH
 
 #===HISTORY_BLOCK===
 #turn off ksh-like !!
