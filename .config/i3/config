@@ -41,6 +41,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
+bindsym $mod+u sticky toggle
+
 hide_edge_borders smart
 
 set $workspace1 "1:"
