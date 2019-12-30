@@ -33,8 +33,7 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 source ~/.zsh_plugins
-source "$HOME/wrk/bin/panbet.env"
-source /opt/navi/navi.plugin.zsh
+source "$HOME/wrk/source.zsh"
 
 export PATH=$WRK/bin:$HOME/bin:$PATH
 
