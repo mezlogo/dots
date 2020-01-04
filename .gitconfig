@@ -24,6 +24,6 @@
     unusedbr = !git br --format='%(refname:short)' | sort | uniq | comm -3 - <(git usedbr)
 [include]
     path = .gitconfig.local
-[filesystem "Oracle Corporation|1.8.0_232|/dev/sda3"]
-	timestampResolution = 32819884 milliseconds
-	minRacyThreshold = 0 nanoseconds
+[filesystem "Oracle Corporation|11.0.5|/dev/sda3"]
+	timestampResolution = 6000 nanoseconds
+	minRacyThreshold = 5360 microseconds
