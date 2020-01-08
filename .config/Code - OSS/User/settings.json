@@ -1,0 +1,11 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.fontSize": 24,
+    "editor.cursorStyle": "block-outline",
+    "window.zoomLevel": 1,
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "keyboard.dispatch": "keyCode"
+}
