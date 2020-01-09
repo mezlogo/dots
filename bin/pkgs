@@ -14,6 +14,8 @@ removeUndeclared() { sudo pacman -Rns $(printNewUndeclared) ; }
 installNewDeclared() { pakku -S --needed $(printNewDeclared) ; }
 
 case "$1" in
+  "printOrphan") pacman -Qdttq ;;
+  "removeOrphan") sudo pacman -Rns $(pacman -Qdttq) ;;
   "printDeclared" | "pd") printDeclared "$2" ;;
   "printInstalled" | "pi") printInstalled ;;
   "printNewDeclared" | "pnd") printNewDeclared ;;
