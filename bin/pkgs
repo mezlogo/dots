@@ -11,7 +11,7 @@ printNewDeclared() { diffPkgs 1 ; }
 printNewUndeclared() { diffPkgs 2 ; }
 
 removeUndeclared() { sudo pacman -Rns $(printNewUndeclared) ; }
-installNewDeclared() { pakku -S --needed $(printNewDeclared) ; }
+installNewDeclared() { pikaur -S --needed $(printNewDeclared) ; }
 
 case "$1" in
   "printOrphan") pacman -Qdttq ;;
