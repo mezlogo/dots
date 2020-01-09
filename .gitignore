@@ -10,6 +10,7 @@ out
 gradlew
 gradlew.bat
 gradle
+package-lock.json
 
 #TMP FILES
 ~*
