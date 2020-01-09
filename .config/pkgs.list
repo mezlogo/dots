@@ -9,7 +9,6 @@ clipit
 deepin-screenshot
 docker
 docker-compose
-expac
 fd
 firefox
 fzf
@@ -20,7 +19,6 @@ i3blocks
 i3-wm
 intel-ucode
 jq
-kotlin
 linux-headers
 maven
 mesa
