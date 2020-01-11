@@ -1,31 +1,41 @@
 #!/bin/bash
 
+#pkgs: syncs package list between machines
+#usage: `pkgs [list [{installed,declared}]]`
+#pacman packages can be EXPLICITY installed and REQUIRED for some other package
+#implicitly installed and orphan (not required for any package) packages must be removed
+#commands:
+#- print list
+#- print explicitly installed
+#- print explicitly installed, but not exported to list
+#- print exported to list, but not installed
+#- remove orphans AND caches
+#- import: remove installed, but not exported to list AND install declared in list, but does not installed
+
 pkgsList="$HOME/.config/pkgs.list"
 
-diffPkgs() { comm -$1 -3 <(printInstalled) <(printDeclared) ; }
+diffPkgs() { comm -$1 -3 <(printInstalled) <(printList) ; }
 
-printDeclared() { [[ -z "$1" ]] && cat $pkgsList | cut -d ',' -f1 | sort || cat $pkgsList | grep -F $1 | cut -d ',' -f1 | sort ; }
+printList() { cat $pkgsList | cut -d ',' -f1 | sort ; }
 printInstalled() { comm -23 <(pacman -Qqe | sort) <(pacman -Qqg base base-devel | sort) ; }
 
-printNewDeclared() { diffPkgs 1 ; }
-printNewUndeclared() { diffPkgs 2 ; }
+printNotExported() { diffPkgs 1 ; }
+printNotInstalled() { diffPkgs 2 ; }
 
-removeUndeclared() { sudo pacman -Rns $(printNewUndeclared) ; }
-installNewDeclared() { pikaur -S --needed $(printNewDeclared) ; }
+removeNotInstalled() { sudo pacman -Rns $(printNotInstalled) ; }
+installNewDeclared() { pakku -S --needed $(printNotExported) ; }
 
 case "$1" in
-  "printOrphan") pacman -Qdttq ;;
-  "removeOrphan") sudo pacman -Rns $(pacman -Qdttq) ;;
-  "printDeclared" | "pd") printDeclared "$2" ;;
+  "printList" | "pl") printList ;;
   "printInstalled" | "pi") printInstalled ;;
-  "printNewDeclared" | "pnd") printNewDeclared ;;
-  "printNewUndeclared" | "pnu") printNewUndeclared ;;
+  "printNotExported" | "pne") printNotExported ;;
+  "printNotInstalled" | "pni") printNotInstalled ;;
   "export" | "e") printInstalled > $pkgsList ;;
-  "removeUndeclared" | "rm") removeUndeclared ;;
+  "removeNotInstalled" | "rm") removeNotInstalled ;;
   "installNewDeclared" | "i") installNewDeclared ;;
   "import")
-    [[ ! -z $(printNewUndeclared) ]] && removeUndeclared || echo nothing to delete
-    [[ ! -z $(printNewDeclared) ]] && installNewDeclared || echo nothing to install
+    [[ ! -z $(printNotInstalled) ]] && removeNotInstalled || echo nothing to delete
+    [[ ! -z $(printNotExported) ]] && installNewDeclared || echo nothing to install
     ;;
-  "status" | *)  echo -e "new declared:\n------\n$(printNewDeclared)\n------\nnew undeclared:\n------\n$(printNewUndeclared)" ;;
+  "status" | *)  echo -e "explicitly installed, but not exported to list:\n------\n$(printNotExported)\n------\nexported to list, but not installed:\n------\n$(printNotInstalled)" ;;
 esac
