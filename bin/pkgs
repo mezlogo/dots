@@ -19,23 +19,23 @@ diffPkgs() { comm -$1 -3 <(printInstalled) <(printList) ; }
 printList() { cat $pkgsList | cut -d ',' -f1 | sort ; }
 printInstalled() { comm -23 <(pacman -Qqe | sort) <(pacman -Qqg base base-devel | sort) ; }
 
-printNotExported() { diffPkgs 1 ; }
-printNotInstalled() { diffPkgs 2 ; }
+printNotInstalled() { diffPkgs 1 ; }
+printNotExported() { diffPkgs 2 ; }
 
-removeNotInstalled() { sudo pacman -Rns $(printNotInstalled) ; }
-installNewDeclared() { pakku -S --needed $(printNotExported) ; }
+removeNotExported() { sudo pacman -Rns $(printNotExported) ; }
+installNotInstalled() { pikaur -S --needed $(printNotInstalled) ; }
 
 case "$1" in
   "printList" | "pl") printList ;;
   "printInstalled" | "pi") printInstalled ;;
   "printNotExported" | "pne") printNotExported ;;
   "printNotInstalled" | "pni") printNotInstalled ;;
+  "removeNotExported" | "rmne") removeNotExported ;;
+  "installNotInstalled" | "ini") installNotInstalled ;;
   "export" | "e") printInstalled > $pkgsList ;;
-  "removeNotInstalled" | "rm") removeNotInstalled ;;
-  "installNewDeclared" | "i") installNewDeclared ;;
   "import")
-    [[ ! -z $(printNotInstalled) ]] && removeNotInstalled || echo nothing to delete
-    [[ ! -z $(printNotExported) ]] && installNewDeclared || echo nothing to install
+    [[ ! -z $(printNotInstalled) ]] && removeNotExported || echo nothing to delete
+    [[ ! -z $(printNotExported) ]] && installNotInstalled || echo nothing to install
     ;;
   "status" | *)  echo -e "explicitly installed, but not exported to list:\n------\n$(printNotExported)\n------\nexported to list, but not installed:\n------\n$(printNotInstalled)" ;;
 esac
