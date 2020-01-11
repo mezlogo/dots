@@ -2,11 +2,11 @@ alacritty
 alsa-utils
 antibody
 autojump
+base
 bat
 chromium
 clipit
 code
-coreutils
 deepin-screenshot
 dhcpcd
 docker
@@ -47,6 +47,7 @@ tree
 ttf-dejavu
 unrar
 unzip
+vi
 virtualbox
 virtualbox-host-modules-arch
 xorg-server
