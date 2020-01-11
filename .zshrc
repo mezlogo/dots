@@ -13,6 +13,7 @@ alias -g R='| rg -F'
 alias cat="bat"
 
 unsetopt auto_cd
+setopt globdots
 
 # ===== Completion
 setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word
