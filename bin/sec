@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+TMPFILE_SEC="/tmp/.sec"
+STORAGE_SEC="$HOME/alma/data/sec.gpg"
+cmnd="$1"
+
+outputStorage() {
+  gpg --quiet --decrypt $STORAGE_SEC
+}
+
+editStorage() {
+  gpg --output $TMPFILE_SEC --quiet --decrypt $STORAGE_SEC
+  nvim $TMPFILE_SEC
+  gpg --yes --output $STORAGE_SEC --recipient mezencevdenis@yandex.ru --encrypt $TMPFILE_SEC
+  rm $TMPFILE_SEC
+}
+
+getFromStorage() {
+  gpg --quiet --decrypt $STORAGE_SEC | grep -m 1 -F $1 | cut -d ',' -f2
+}
+
+case "$cmnd" in
+  "outputStorage" | "o") outputStorage ;;
+  "editStorage" | "e") editStorage ;;
+  "getFromStorage" | "g") getFromStorage "$2" ;;
+  *) echo "unknown command: $cmnd"  ;;
+esac
