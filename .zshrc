@@ -2,7 +2,10 @@ if [ ! -f ~/.zsh_plugins ]; then
     antibody bundle < ~/.zsh_bundles > ~/.zsh_plugins
 fi
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]];
+    sudo systemctl restart systemd-logind.service;
+    then exec startx;
+fi
 
 alias -g L='| less'
 alias -g W='| wc -l'

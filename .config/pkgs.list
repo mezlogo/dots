@@ -31,13 +31,14 @@ neovim
 nodejs
 npm
 ntfs-3g
+ntp
 openbsd-netcat
 openconnect
 openjdk8-src
 openssh
 otf-font-awesome
 pidgin
-pikaur
+pikaur-git
 ripgrep
 rofi
 thunderbird
@@ -50,6 +51,8 @@ unzip
 vi
 virtualbox
 virtualbox-host-modules-arch
+vlc
+xclip
 xorg-server
 xorg-xev
 xorg-xinit
