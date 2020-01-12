@@ -25,6 +25,8 @@ jdk8-openjdk
 jq
 linux
 linux-headers
+man-db
+man-pages
 maven
 mesa
 neovim
