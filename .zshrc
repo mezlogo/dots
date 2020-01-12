@@ -3,7 +3,7 @@ if [ ! -f ~/.zsh_plugins ]; then
 fi
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]];
-    sudo systemctl restart systemd-logind.service;
+    #sudo systemctl restart systemd-logind.service;
     then exec startx;
 fi
 
