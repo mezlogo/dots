@@ -7,5 +7,6 @@
     "workbench.startupEditor": "newUntitledFile",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "window.menuBarVisibility": "toggle"
 }
