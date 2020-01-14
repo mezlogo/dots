@@ -35,6 +35,7 @@ ntfs-3g
 ntp
 openbsd-netcat
 openconnect
+openjdk11-src
 openjdk8-src
 openssh
 otf-font-awesome
@@ -53,6 +54,7 @@ vi
 virtualbox
 virtualbox-host-modules-arch
 vlc
+wireshark-qt
 xclip
 xorg-server
 xorg-xev
