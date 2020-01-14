@@ -33,9 +33,9 @@ case "$1" in
   "removeNotExported" | "rmne") removeNotExported ;;
   "installNotInstalled" | "ini") installNotInstalled ;;
   "export" | "e") printInstalled > $pkgsList ;;
-  "import")
-    [[ ! -z $(printNotInstalled) ]] && removeNotExported || echo nothing to delete
-    [[ ! -z $(printNotExported) ]] && installNotInstalled || echo nothing to install
+  "sync")
+    [[ ! -z $(printNotExported) ]] && removeNotExported || echo nothing to remove
+    [[ ! -z $(printNotInstalled) ]] && installNotInstalled || echo nothing to install
     ;;
   "status" | *)  echo -e "explicitly installed, but not exported to list:\n------\n$(printNotExported)\n------\nexported to list, but not installed:\n------\n$(printNotInstalled)" ;;
 esac
