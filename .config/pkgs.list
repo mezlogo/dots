@@ -21,7 +21,6 @@ htop
 i3blocks
 i3-wm
 intel-ucode
-jdk8-openjdk
 jq
 linux
 linux-headers
@@ -37,7 +36,6 @@ ntp
 openbsd-netcat
 openconnect
 openjdk11-src
-openjdk8-src
 openssh
 otf-font-awesome
 pidgin
