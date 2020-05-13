@@ -8,5 +8,14 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "keyboard.dispatch": "keyCode",
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.multiCursorModifier": "alt",
+    "C_Cpp.updateChannel": "Insiders"
 }
