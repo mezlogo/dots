@@ -17,5 +17,6 @@
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.multiCursorModifier": "alt",
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "debug.onTaskErrors": "debugAnyway"
 }
