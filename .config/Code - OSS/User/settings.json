@@ -1,22 +1,53 @@
 {
-    "editor.renderWhitespace": "all",
-    "editor.fontSize": 24,
-    "editor.cursorStyle": "block-outline",
-    "window.zoomLevel": 1,
-    "workbench.activityBar.visible": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "keyboard.dispatch": "keyCode",
-    "window.menuBarVisibility": "toggle",
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 24,
+  "editor.cursorStyle": "block-outline",
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "keyboard.dispatch": "keyCode",
+  "window.menuBarVisibility": "toggle",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.multiCursorModifier": "alt",
+  "C_Cpp.updateChannel": "Insiders",
+  "debug.onTaskErrors": "debugAnyway",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "editor.multiCursorModifier": "alt",
-    "C_Cpp.updateChannel": "Insiders",
-    "debug.onTaskErrors": "debugAnyway"
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-k>": false,
+    "<C-e>": false,
+    "<C-v>": false,
+    "<C-c>": false
+  }
 }
