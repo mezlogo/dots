@@ -17,7 +17,8 @@ floating_modifier $mod
 bindsym $mod+t exec deepin-screenshot
 bindsym $mod+Return exec alacritty -e zsh -c 'tmux new-session -A -s default'
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi -theme DarkBlue -show drun -lines 20
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+x exec CM_LAUNCHER=rofi clipmenu
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -117,5 +118,4 @@ bar {
 client.focused          #ffffff #000000 #00ff00 #ffffff   #00ff00
 client.unfocused        #ffffff #000000 #ffffff #ffffff   #000000
 
-exec copyq
 exec "xkbcomp -w 0 ~/.config/xkb/xkbdump $DISPLAY"

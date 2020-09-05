@@ -1,0 +1,22 @@
+rofi.color-enabled: true
+
+rofi.color-window: #000000, #000000, #999999
+rofi.color-normal: #000000, #00ff00, #000000, #999999, #ffffff
+rofi.color-active: #000000, #00ff00, #000000, #999999, #ffffff
+rofi.color-urgent: #000000, #00ff00, #000000, #999999, #ffffff
+
+
+rofi.width: 60
+!rofi.padding: 40
+!rofi.opacity: 80
+rofi.border: 0px
+rofi.line-margin: 4
+rofi.lines: 10
+rofi.separator-style: none
+rofi.columns: 1
+rofi.font: Coda Bold 16
+rofi.bw: 4
+rofi.eh: 1
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.auto-select: false
