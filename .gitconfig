@@ -22,5 +22,8 @@
     cap = !git cam 'New version' && git pom
     usedbr = !git reflog show --since=\"30 days ago\" --all | awk '{if(\"checkout:\" == $3) print($6 \"\\n\" $8)}' | sort | uniq
     unusedbr = !git br --format='%(refname:short)' | sort | uniq | comm -3 - <(git usedbr)
+    unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+
+merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
 [include]
     path = .gitconfig.local

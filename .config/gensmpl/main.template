@@ -1,0 +1,5 @@
+package mezlogo.{project_name}
+
+fun main() {{
+  println("Hello!")
+}}
