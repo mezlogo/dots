@@ -2,28 +2,17 @@
     autocrlf = input
     excludesfile = ~/.gitignore
 [alias]
-    rst = reset --hard origin/master
-    po = push origin
-    pom = push origin master
-    pfom = pull -f -p origin master
     f = fetch -p
     co = checkout
     br = branch
     st = status
     cm = commit -m
-    ca = commit --amend --no-edit
     cam = commit -am
-    caa = commit --all --amend --no-edit
     ll = "log --pretty=format:%Cgreen%h%Cred%cr%<(24)%C(#ff69b4)%an%C(white)%d%n%C(yellow)%s --numstat"
-    ls = log --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --date=relative
-    lg = log --graph --pretty=format:'%C(yellow)%d%Creset %C(cyan)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all
     t = describe --abbrev=0 --tags HEAD
     bdiff = "!f(){ git diff $(git merge-base $1 HEAD) $1; };f"
     cap = !git cam 'New version' && git pom
-    usedbr = !git reflog show --since=\"30 days ago\" --all | awk '{if(\"checkout:\" == $3) print($6 \"\\n\" $8)}' | sort | uniq
-    unusedbr = !git br --format='%(refname:short)' | sort | uniq | comm -3 - <(git usedbr)
-    unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
-
-merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+    actualbr = !git reflog show --since=\"14 days ago\" --all | awk '{if(\"checkout:\" == $3) print($6 \"\\n\" $8)}' | sort | uniq
+    oldbr = !bash -c 'git br --format=\"%(refname:short)\" | sort | uniq | comm -3 - <(git actualbr)'
 [include]
     path = .gitconfig.local
