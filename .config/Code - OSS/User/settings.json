@@ -2,7 +2,7 @@
   "editor.renderWhitespace": "all",
   "editor.fontSize": 24,
   "editor.cursorStyle": "block-outline",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDelete": false,
