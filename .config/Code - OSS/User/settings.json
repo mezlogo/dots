@@ -50,5 +50,6 @@
     "<C-v>": false,
     "<C-w>": false,
     "<C-c>": false
-  }
+  },
+  "python.pythonPath": "/usr/bin/python"
 }
