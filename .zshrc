@@ -110,10 +110,9 @@ books_path=~/books
 yadm_path=~/.dots.git
 alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
 
-alias repos="echo 'alma\nyadm\nwrk\nbooks'"
-alias gst="mygit status $wrk_path $alma_path $books_path $yadm_path"
-alias gimprt="mygit fetch $wrk_path $alma_path $books_path $yadm_path && mygit rebase $wrk_path $alma_path $books_path $yadm_path"
-alias gexmprt='repos | xargs -L 1 gsync export'
+alias gst="mygit status $wrk_path $alma_path $books_path"
+alias gimprt="mygit fetch $wrk_path $alma_path $books_path && mygit rebase $wrk_path $alma_path $books_path"
+alias gexprt="mygit commit $wrk_path $alma_path $books_path && mygit push $wrk_path $alma_path $books_path"
 
 copy-to-xsel() {
   zle kill-buffer
