@@ -5,6 +5,7 @@ fi
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]];
     #sudo systemctl restart systemd-logind.service;
     then exec startx;
+    systemctl --user import-environment DISPLAY && systemctl --user restart clipmenud.service
 fi
 
 alias -g L='| less'
@@ -95,7 +96,6 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 export MAVEN_OPTS='-Xmx4G'
-export NAVI_PATH="$HOME/.local/share/navi"
 
 alias ll='ls -alF --color=always'
 alias ls='ls -F --color=always'
@@ -104,9 +104,15 @@ alias vi='nvim'
 
 stty -ixon -ixoff
 
+wrk_path=~/wrk
+alma_path=~/alma
+books_path=~/books
+yadm_path=~/.dots.git
+alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
+
 alias repos="echo 'alma\nyadm\nwrk\nbooks'"
-alias gst='repos | xargs -L 1 gsync st'
-alias gimprt='repos | xargs -L 1 gsync import'
+alias gst="mygit status $wrk_path $alma_path $books_path $yadm_path"
+alias gimprt="mygit fetch $wrk_path $alma_path $books_path $yadm_path && mygit rebase $wrk_path $alma_path $books_path $yadm_path"
 alias gexmprt='repos | xargs -L 1 gsync export'
 
 copy-to-xsel() {
