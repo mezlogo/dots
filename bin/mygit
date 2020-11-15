@@ -1,0 +1,180 @@
+#!/bin/env python
+from git import Repo, Git
+from git.remote import FetchInfo
+import sys
+from dataclasses import dataclass
+import os
+import stat
+import time
+
+FETCH_PATH = "FETCH_HEAD"
+FILE_NAME_SEPARATOR = "\n\t\t"
+
+class clrs:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+@dataclass
+class GitData:
+    path: str
+    last_fetch: int
+    tag: str
+    remote_tag: str
+    branch: str
+    tracked: str
+    untracked: str
+    head_status: str
+
+def get_tag_or_none(gitrepo: Git, branch: str):
+    try:
+        return gitrepo.describe('--tags', branch, abbrev=0)
+    except:
+        return None
+
+def create_repo(path: str):
+    splited_path = path.split(":")
+    Repo(path) if 1 == len(splited_path) else Repo()
+
+def get_head_status(gitrepo: Git):
+    head_ahead = int(gitrepo.rev_list('--count', "origin/master..HEAD"))
+    head_behind = int(gitrepo.rev_list('--count', "HEAD..origin/master"))
+
+    head_status = "SAME"
+    if 0 < head_ahead and 0 < head_behind:
+        head_status = "BOTH"
+    elif 0 < head_ahead:
+        head_status = "AHEAD"
+    elif 0 < head_behind:
+        head_behind = "BEHIND"
+
+    return head_status
+
+def rebase_git(path: str):
+    repo = Repo(path)
+    gitrepo = repo.git
+
+    head_status = get_head_status(gitrepo)
+
+    name = path.split("/")[-1]
+
+    if "SAME" == head_status or "AHEAD":
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour(head_status, clrs.WARNING)} nothing to update")
+    else:
+        gitrepo.rebase('--autostash', 'origin/master')
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour(head_status, clrs.WARNING)} rebased")
+
+def fetch_git(path: str):
+    repo = Repo(path)
+    origin = repo.remote("origin")
+    fetches = origin.fetch()
+    
+    updated_branches = list(filter(lambda it: it.flags != FetchInfo.HEAD_UPTODATE, fetches))
+    updated_branches_names = list(map(lambda it: it.name, updated_branches))
+    updated_branches_as_string = FILE_NAME_SEPARATOR.join(updated_branches_names)
+    updated_branches_report = "" if 0 == len(updated_branches) else f"\n\tUpdated:{FILE_NAME_SEPARATOR}{updated_branches_as_string}"
+
+    has_master_updated = list(filter(lambda it: "master" == it, updated_branches_names))
+    master_updated = "" if 0 == len(has_master_updated) else "master has updated"
+
+    name = path.split("/")[-1]
+
+    print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour(master_updated, clrs.WARNING)} {updated_branches_report}")
+
+def commit_git(path: str):
+    repo = Repo(path)
+    
+    name = path.split("/")[-1]
+   
+    if repo.is_dirty():
+        gitrepo = repo.git
+        gitrepo.commit('-am', 'New version')
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: new commit")
+    else:
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: nothing to commit")
+
+def push_git(path: str):
+    repo = Repo(path)
+    gitrepo = repo.git
+    head_status = get_head_status(gitrepo) 
+    name = path.split("/")[-1]
+   
+    if "SAME" == head_status:
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: nothing to push")
+    elif "AHEAD" == head_status:
+        gitrepo.push('origin', 'master')
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: PUSHED")
+    else:
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour('SYNC FIRST', clrs.WARNING)}")
+
+
+
+def parse_git(path: str):
+    repo = Repo(path)
+
+    last_fetch = os.stat(f"{repo.git_dir}/{FETCH_PATH}")[stat.ST_MTIME]
+
+    gitrepo = repo.git
+
+    tag = get_tag_or_none(gitrepo, 'HEAD')
+    remote_tag = get_tag_or_none(gitrepo, 'origin/master')
+    branch = repo.active_branch.name
+
+    untracked = FILE_NAME_SEPARATOR.join(repo.untracked_files)
+    tracked = FILE_NAME_SEPARATOR.join(gitrepo.ls_files("-m").split("\n"))
+
+    head_status = get_head_status(gitrepo)
+
+    return GitData(path, last_fetch, tag, remote_tag, branch, tracked, untracked, head_status)
+
+def colour(msg: str, c: str):
+    return f"{c}{msg}{clrs.ENDC}"
+
+def print_git_status(report: GitData):
+    now = int(time.mktime(time.localtime()))
+    last_fetch = round((now - report.last_fetch) / 3600, 2)
+    tag = "" if None == report.tag else report.tag
+    need_update = "" if report.tag == report.remote_tag else "NEED_UPDATE"
+    name = report.path.split("/")[-1]
+    branch = "" if "master" == report.branch else report.branch
+    tracked = report.tracked
+    if (tracked):
+        tracked = f"\n\ttracked:{FILE_NAME_SEPARATOR}{tracked}"
+    untracked = report.untracked
+    if (untracked):
+        untracked = f"\n\tuntracked:{FILE_NAME_SEPARATOR}{untracked}"
+
+    print(f"{colour(name.ljust(8), clrs.OKCYAN)}: updated {last_fetch} hours ago {report.head_status} {colour(tag, clrs.OKGREEN)} {colour(need_update, clrs.WARNING)} {colour(branch, clrs.WARNING)} {tracked} {untracked}")
+
+commandMapping = {
+    'status': lambda path: print_git_status(parse_git(path)),
+    'fetch': lambda path: fetch_git(path),
+    'rebase': lambda path: rebase_git(path),
+    'commit': lambda path: commit_git(path),
+    'push': lambda path: push_git(path),
+}
+
+def main(args):
+    if len(args) <= 1:
+        print("USAGE: command (status, fetch) repos...")
+        exit(-1)
+    
+    command = args[0]
+
+    method = commandMapping.get(command, None)
+
+    if None == method:
+        print(f"command: {command} not found. Supproted {commandMapping.keys()}")
+        exit(-1)
+    
+    for path in args[1:]:
+        method(path)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
