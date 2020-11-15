@@ -40,7 +40,7 @@ source /usr/share/fzf/key-bindings.zsh
 source ~/.zsh_plugins
 source "$HOME/wrk/source.zsh"
 
-export PATH=$WRK/bin:$HOME/bin:$PATH
+export PATH=$HOME/wrk/bin:$HOME/bin:$PATH
 
 #===HISTORY_BLOCK===
 #turn off ksh-like !!
