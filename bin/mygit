@@ -52,7 +52,7 @@ def get_head_status(gitrepo: Git):
     elif 0 < head_ahead:
         head_status = "AHEAD"
     elif 0 < head_behind:
-        head_behind = "BEHIND"
+        head_status = "BEHIND"
 
     return head_status
 
@@ -64,8 +64,8 @@ def rebase_git(path: str):
 
     name = path.split("/")[-1]
 
-    if "SAME" == head_status or "AHEAD":
-        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour(head_status, clrs.WARNING)} nothing to update")
+    if head_status in ["AHEAD", "SAME"]:
+        print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour(head_status, clrs.WARNING)} nothing to import")
     else:
         gitrepo.rebase('--autostash', 'origin/master')
         print(f"{colour(name.ljust(8), clrs.OKCYAN)}: {colour(head_status, clrs.WARNING)} rebased")
