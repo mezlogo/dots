@@ -17,7 +17,7 @@ pkgsList="$HOME/.config/pkgs.list"
 diffPkgs() { comm -$1 -3 <(printInstalled) <(printList) ; }
 
 printList() { cat $pkgsList | cut -d ',' -f1 | sort ; }
-printInstalled() { comm -23 <(pacman -Qqe | sort) <(pacman -Qqg base base-devel | sort) ; }
+printInstalled() { comm -23 <(pacman -Qqe | sort) <(pacman -Qqg base-devel | sort) ; }
 
 printNotInstalled() { diffPkgs 1 ; }
 printNotExported() { diffPkgs 2 ; }

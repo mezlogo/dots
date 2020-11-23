@@ -4,8 +4,8 @@ antibody
 autojump
 base
 bat
+clipmenu
 chromium
-clipit
 code
 deepin-screenshot
 dhcpcd
@@ -39,9 +39,9 @@ openjdk11-src
 openssh
 otf-font-awesome
 pidgin
-pikaur-git
 ripgrep
 rofi
+telegram-desktop
 thunderbird
 tmux
 transmission-gtk

@@ -127,7 +127,7 @@ def parse_git(path: str):
     branch = repo.active_branch.name
 
     untracked = FILE_NAME_SEPARATOR.join(repo.untracked_files)
-    tracked = FILE_NAME_SEPARATOR.join(gitrepo.ls_files("-m").split("\n"))
+    tracked = FILE_NAME_SEPARATOR.join(gitrepo.status("-s").split("\n"))
 
     head_status = get_head_status(gitrepo)
 
