@@ -29,7 +29,6 @@ class GitData:
     remote_tag: str
     branch: str
     tracked: str
-    untracked: str
     head_status: str
 
 def get_tag_or_none(gitrepo: Git, branch: str):
@@ -126,12 +125,11 @@ def parse_git(path: str):
     remote_tag = get_tag_or_none(gitrepo, 'origin/master')
     branch = repo.active_branch.name
 
-    untracked = FILE_NAME_SEPARATOR.join(repo.untracked_files)
     tracked = FILE_NAME_SEPARATOR.join(gitrepo.status("-s").split("\n"))
 
     head_status = get_head_status(gitrepo)
 
-    return GitData(path, last_fetch, tag, remote_tag, branch, tracked, untracked, head_status)
+    return GitData(path, last_fetch, tag, remote_tag, branch, tracked, head_status)
 
 def colour(msg: str, c: str):
     return f"{c}{msg}{clrs.ENDC}"
@@ -146,11 +144,8 @@ def print_git_status(report: GitData):
     tracked = report.tracked
     if (tracked):
         tracked = f"\n\ttracked:{FILE_NAME_SEPARATOR}{tracked}"
-    untracked = report.untracked
-    if (untracked):
-        untracked = f"\n\tuntracked:{FILE_NAME_SEPARATOR}{untracked}"
 
-    print(f"{colour(name.ljust(8), clrs.OKCYAN)}: updated {last_fetch} hours ago {report.head_status} {colour(tag, clrs.OKGREEN)} {colour(need_update, clrs.WARNING)} {colour(branch, clrs.WARNING)} {tracked} {untracked}")
+    print(f"{colour(name.ljust(8), clrs.OKCYAN)}: updated {last_fetch} hours ago {report.head_status} {colour(tag, clrs.OKGREEN)} {colour(need_update, clrs.WARNING)} {colour(branch, clrs.WARNING)} {tracked}")
 
 commandMapping = {
     'status': lambda path: print_git_status(parse_git(path)),
