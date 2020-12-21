@@ -109,10 +109,11 @@ alma_path=~/alma
 books_path=~/books
 yadm_path=~/.dots.git
 alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
+repo_pathes="$wrk_path $alma_path $books_path $HOME:$yadm_path"
 
-alias gst="mygit status $wrk_path $alma_path $books_path"
-alias gimprt="mygit fetch $wrk_path $alma_path $books_path && mygit rebase $wrk_path $alma_path $books_path"
-alias gexprt="mygit commit $wrk_path $alma_path $books_path && mygit push $wrk_path $alma_path $books_path"
+alias gst="mygit status $repo_pathes"
+alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
+alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 copy-to-xsel() {
   zle kill-buffer
