@@ -120,3 +120,5 @@ copy-to-xsel() {
   print -rn -- $CUTBUFFER | xsel -ib
 }; zle -N copy-to-xsel
 bindkey -M viins "^Y" copy-to-xsel
+
+alias prx="java -jar ~/alma/projects/prx/build/libs/prx.jar"
