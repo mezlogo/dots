@@ -1,27 +1,38 @@
 #!/bin/env python
-import sys
 import os
 from shutil import copy2
 from pathlib import Path
+import argparse
 
 root_dir = f"{Path.home()}/.config/gensmpl"
-build_file = f"{root_dir}/build.gradle.kts"
-main_file = f"{root_dir}/main.template"
-main_path = "src/main/kotlin/mezlogo"
+template_suffix = '.template'
+template_dir = 'PROJECT_NAME'
 
-def gensmpl(project_name):
-    src_code_dir = f"{project_name}/{main_path}/{project_name}"
-    os.makedirs(src_code_dir)
-    copy2(build_file, project_name)
-    with open(main_file, 'r') as src, open(f"{src_code_dir}/main.kt", 'w') as dst:
-        content = src.read().format(project_name = project_name)
-        dst.write(content)
+def gensmpl(project_type, project_name):
 
-def main(args):
-    if 0 == len(args):
-        print("plz, enter project name")
-        exit(-1)
-    gensmpl(args[0])
+    startpath = f"{root_dir}/{project_type}"
+
+    for root, dirs, files in os.walk(startpath):
+
+        current_dir = project_name + root.replace(startpath, '').replace(template_dir, project_name)
+        os.makedirs(current_dir)
+
+        for file in files:
+            file_path = f"{root}/{file}"
+            if file.endswith(template_suffix):
+                dst_file = file.replace(template_suffix, '')
+                with open(file_path, 'r') as src, open(f"{current_dir}/{dst_file}", 'w') as dst:
+                    content = src.read().format(project_name = project_name)
+                    dst.write(content)
+            else:
+                copy2(file_path, current_dir)
+
+def main():
+    parser = argparse.ArgumentParser(description='Generate template project.')
+    parser.add_argument("type", help='type of project')
+    parser.add_argument("name", help='project name')
+    args = parser.parse_args()
+    gensmpl(args.type, args.name)
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+   main()
