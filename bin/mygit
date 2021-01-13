@@ -177,7 +177,10 @@ def main(args):
         exit(-1)
     
     for path in args[1:]:
-        method(path)
+        try:
+            method(path)
+        except Exception as e:
+            print(f"something goes wrong for ${path}: ${e}")
 
 if __name__ == "__main__":
    main(sys.argv[1:])
