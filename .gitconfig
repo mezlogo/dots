@@ -18,6 +18,3 @@
 [user]
 	email = dmezentsev@marathonbet.ru
 	name = Mezentsev Denis
-[filesystem "N/A|11.0.8|/dev/mapper/panbetdir"]
-	timestampResolution = 5000 nanoseconds
-	minRacyThreshold = 5371 microseconds
