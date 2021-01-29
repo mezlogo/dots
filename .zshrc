@@ -128,3 +128,5 @@ alias wm="java -jar ~/wrk/projects/wmclient/build/libs/wmclient.jar"
 alias app="java -jar ~/wrk/projects/appclient/build/libs/appclient.jar"
 alias myamqp='java -jar ~/alma/projects/myamqp/build/libs/myamqp.jar'
 alias pandecoder='java -jar ~/wrk/projects/pandecoder/build/libs/pandecoder.jar'
+alias antlr4='java -cp ~/tools/antlr-4.9-complete.jar:. org.antlr.v4.Tool'
+alias grun='java -cp ~/tools/antlr-4.9-complete.jar:. org.antlr.v4.gui.TestRig'
