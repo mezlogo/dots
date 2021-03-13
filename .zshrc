@@ -122,6 +122,7 @@ copy-to-xsel() {
 bindkey -M viins "^Y" copy-to-xsel
 
 alias prx="java -jar ~/alma/projects/prx/build/libs/prx.jar"
+alias jmx="java -jar ~/alma/projects/jmxclient/build/libs/jmxclient.jar"
 alias api="java -jar ~/wrk/projects/apiclient/build/libs/apiclient.jar"
 alias cashout="java -jar ~/wrk/projects/cashoutclient/build/libs/cashoutclient.jar"
 alias web="java -jar ~/wrk/projects/webclient/build/libs/webclient.jar"
