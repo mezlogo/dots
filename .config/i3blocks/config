@@ -27,6 +27,11 @@
 separator_block_width=15
 markup=none
 
+
+[memory]
+command=cat /sys/class/power_supply/BAT0/capacity
+interval=5
+
 [volume]
 label=♪
 instance=Master
