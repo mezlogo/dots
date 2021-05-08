@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=alacritty -e /home/mezlogo/bin/snippets
+Name=snippets
+Terminal=false
+Type=Application

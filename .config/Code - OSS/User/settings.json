@@ -55,5 +55,6 @@
   "python.showStartPage": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "debug.javascript.autoAttachFilter": "smart"
 }
