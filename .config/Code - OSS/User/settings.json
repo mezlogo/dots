@@ -2,7 +2,7 @@
   "editor.renderWhitespace": "all",
   "editor.fontSize": 12,
   "editor.cursorStyle": "block-outline",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDelete": false,
@@ -56,5 +56,6 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "debug.javascript.autoAttachFilter": "smart"
+  "debug.javascript.autoAttachFilter": "smart",
+  "clangd.path": "/home/mezlogo/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/12.0.0/clangd_12.0.0/bin/clangd"
 }

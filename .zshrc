@@ -107,8 +107,9 @@ stty -ixon -ixoff
 wrk_path=~/wrk
 alma_path=~/alma
 yadm_path=~/.dots.git
+exo_path=~/exo
 alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
-repo_pathes="$wrk_path $alma_path $HOME:$yadm_path"
+repo_pathes="$wrk_path $alma_path $HOME:$yadm_path $exo_path"
 
 alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
