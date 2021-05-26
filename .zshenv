@@ -5,6 +5,11 @@ export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
 export EDITOR=nvim
 export VISUAL=nvim
 
+alias ll='ls -alF --color=always'
+alias ls='ls -F --color=always'
+alias vim='nvim'
+alias vi='nvim'
+
 source "$HOME/wrk/source.zsh"
 
 export PATH=$HOME/wrk/bin:$HOME/bin:$PATH

@@ -10,6 +10,8 @@ alias -g R='| rg -F'
 
 unsetopt auto_cd
 setopt globdots
+setopt prompt_subst
+autoload -Uz compinit && compinit
 
 # ===== Completion
 setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word
@@ -22,8 +24,6 @@ unsetopt menu_complete # do not autoselect the first completion entry
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
 source ~/.zsh_plugins
 
 #===HISTORY_BLOCK===
@@ -43,13 +43,9 @@ unsetopt append_history
 
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=$HOME/.zsh_history
+HISTFILE=~/.zsh_history
 
 #===PROMPT_BLOCK===
-setopt prompt_subst
-autoload -Uz compinit && compinit
-autoload -Uz vcs_info
-zstyle ':vcs_info:git*' formats "%b"
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -62,27 +58,12 @@ bindkey -M viins '^[.' insert-last-word
 bindkey -M viins '^Q' vi-backward-word
 bindkey -M viins '^F' vi-forward-word
 
-precmd() {
-  vcs_info
-  timer=${timer:-0}
-  timer_show=$(($SECONDS - $timer))
-  RPROMPT='%B%F{white}${vcs_info_msg_0_} ${timer_show} %F{yello}%~%b%f'
-}
-preexec() {
-  timer=$SECONDS
-}
-
 function zle-line-init zle-keymap-select {
-  PROMPT='%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f '
+  PROMPT="%F{yello}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
   zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
-
-alias ll='ls -alF --color=always'
-alias ls='ls -F --color=always'
-alias vim='nvim'
-alias vi='nvim'
 
 stty -ixon -ixoff
 

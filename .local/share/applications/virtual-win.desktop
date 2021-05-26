@@ -3,6 +3,6 @@ Type=Application
 Version=1.0
 Name=Virutal Windows
 Comment=A virtualbox's Win7 runner
-Exec=vboxmanage startvm win
+Exec=vboxmanage startvm win7x64lite
 Terminal=false
 Categories=OS;Virtual;Windows;
