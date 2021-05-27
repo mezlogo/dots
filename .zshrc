@@ -58,8 +58,12 @@ bindkey -M viins '^[.' insert-last-word
 bindkey -M viins '^Q' vi-backward-word
 bindkey -M viins '^F' vi-forward-word
 
+precmd() {
+  GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+}
+
 function zle-line-init zle-keymap-select {
-  PROMPT="%F{yello}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
+  PROMPT="$GIT_BRANCH%F{green}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
   zle reset-prompt
 }
 zle -N zle-line-init
