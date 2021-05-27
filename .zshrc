@@ -2,6 +2,10 @@ if [ ! -f ~/.zsh_plugins ]; then
     antibody bundle < ~/.zsh_bundles > ~/.zsh_plugins
 fi
 
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]];
+    then exec startx;
+fi
+
 alias -g L='| less'
 alias -g W='| wc -l'
 alias -g S='| sort | uniq -c | sort -nr'
@@ -63,7 +67,7 @@ precmd() {
 }
 
 function zle-line-init zle-keymap-select {
-  PROMPT="$GIT_BRANCH%F{green}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
+  PROMPT="%F{yello}$GIT_BRANCH%F{green}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
   zle reset-prompt
 }
 zle -N zle-line-init

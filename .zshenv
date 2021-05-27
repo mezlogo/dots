@@ -12,7 +12,7 @@ alias vi='nvim'
 
 source "$HOME/wrk/source.zsh"
 
-export PATH=$HOME/wrk/bin:$HOME/bin:$PATH
+export PATH="$HOME/tools/apache-maven-3.6.3/bin:$HOME/wrk/bin:$HOME/bin:$PATH"
 
 export MAVEN_OPTS='-Xmx4G'
 
