@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 TMPFILE_SEC="/tmp/.sec"
-STORAGE_SEC="$HOME/alma/data/sec.gpg"
+STORAGE_SEC="$HOME/exo/data/sec.gpg"
 cmnd="$1"
 
 outputStorage() {

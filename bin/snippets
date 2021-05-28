@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 SNIPPET_REPO="$HOME/exo/snippets"
+SINPPET_BUILD_SCRIPT="$HOME/exo/modules/python/build_snippets.py"
 
 function fzf_snippet {
   local selected_snippet
   selected_snippet=$(
-    python ~/exo/projects/build_snippets/src/build_snippets.py $SNIPPET_REPO |
-      fzf --preview 'bat --style=numbers --color=always --line-range :500 ~/exo/snippets/{}'
+    python $SINPPET_BUILD_SCRIPT $SNIPPET_REPO |
+      fzf --preview 'cat --style=numbers --color=always --line-range :500 ~/exo/snippets/{}'
   )
   if [ -n "$selected_snippet" ]; then
     cat "$SNIPPET_REPO/$selected_snippet" | sed "s/^export\s//g" | xsel -b
