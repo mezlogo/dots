@@ -16,6 +16,7 @@ alias ls='ls -F --color=always'
 alias vim='nvim'
 alias vi='nvim'
 alias cat="bat"
+alias jc="/usr/bin/jc"
 
 export PATH="$HOME/tools/apache-maven-3.6.3/bin:$HOME/bin:$exo/tools/bin:$PATH"
 
