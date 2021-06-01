@@ -5,7 +5,7 @@ export VISUAL=nvim
 
 export exo="$HOME/exo"
 
-export BASH_ENV="~/.zshenv"
+export BASH_ENV="~/.profile"
 export NODE_MODULE="$exo/modules/node"
 export PYTHONPATH="$exo/modules/python"
 
