@@ -11,6 +11,7 @@ gradlew
 gradlew.bat
 gradle
 package-lock.json
+__pycache__
 
 #TMP FILES
 ~*

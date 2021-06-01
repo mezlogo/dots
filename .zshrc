@@ -67,7 +67,7 @@ precmd() {
 }
 
 function zle-line-init zle-keymap-select {
-  PROMPT="%F{yello}$GIT_BRANCH%F{green}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
+  PROMPT="%F{yello}$GIT_BRANCH%F{blue}%~"$'\n'"%(?.%F{green}.%F{red})%B${${KEYMAP/vicmd/N}/(main|viins)/I}>%b%f "
   zle reset-prompt
 }
 zle -N zle-line-init

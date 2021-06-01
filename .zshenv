@@ -16,7 +16,7 @@ alias ls='ls -F --color=always'
 alias vim='nvim'
 alias vi='nvim'
 alias cat="bat"
-alias jc="~/.local/bin/jc"
+alias jcpy="python $HOME/.local/lib/python3.9/site-packages/jc/cli.py"
 
 export PATH="$HOME/tools/apache-maven-3.6.3/bin:$HOME/bin:$exo/tools/bin:$PATH"
 
