@@ -58,5 +58,8 @@
   "debug.javascript.autoAttachFilter": "smart",
   "clangd.path": "/home/mezlogo/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/12.0.0/clangd_12.0.0/bin/clangd",
   "editor.largeFileOptimizations": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "window.zoomLevel": 1
 }
