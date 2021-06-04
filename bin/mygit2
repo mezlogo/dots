@@ -1,0 +1,56 @@
+#!/bin/env python
+import argparse
+from argparse import ArgumentTypeError
+import os
+from wgit import GitWrapperDirs, GitWrapperArguments, fetch, report
+
+
+def check_dir_and_parse(arg: str) -> GitWrapperDirs:
+    dirs = arg.split(":")
+
+    dirs_len = len(dirs)
+    if 2 < dirs_len:
+        raise ArgumentTypeError(
+            f"Max 1 colon permitted in git location argument. You passed: {arg}")
+
+    result = (dirs[0], dirs[1] if 2 == dirs_len else f"{dirs[0]}/.git")
+
+    for repo_dir in result:
+        if not os.path.isdir(repo_dir):
+            raise ArgumentTypeError(
+                f"{repo_dir} should be at least a directory")
+
+    return GitWrapperDirs(result[0], result[1])
+
+
+def main():
+    parser = argparse.ArgumentParser(description='git batch automation tool')
+    parser.add_argument('-d', '--dry', action='store_true',
+                        help='Output shell command without execution')
+    parser.add_argument('-v', '--verbose',
+                        action='store_true', help='Print git output')
+
+    subparsers = parser.add_subparsers(required=True, help='sub-command help')
+
+    command_fetch = subparsers.add_parser(
+        'fetch', aliases=['f'], help='automate fetch for multiple repositories in paralell').set_defaults(func=fetch)
+
+    command_report  = subparsers.add_parser(
+        'report', aliases=['r'], help='git repo reporting').set_defaults(func=report)
+
+    parser.add_argument('repos', type=check_dir_and_parse,
+                        help='Git repos. Use colon when working and git dirs are not the same', nargs='+')
+
+    args = parser.parse_args()
+
+    parsed_args = GitWrapperArguments(args.repos, args.verbose, args.dry)
+
+    if parsed_args.verbose:
+        print("Parsed args:")
+        print(parsed_args)
+
+    args.func(parsed_args)
+
+
+if __name__ == "__main__":
+    main()

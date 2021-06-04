@@ -17,6 +17,8 @@ alias vim='nvim'
 alias vi='nvim'
 alias cat="bat"
 alias jcpy="python $HOME/.local/lib/python3.9/site-packages/jc/cli.py"
+alias newpan="inv -r $HOME/exo/modules/python -c pan_invoke"
+
 
 export PATH="$HOME/tools/apache-maven-3.6.3/bin:$HOME/bin:$exo/tools/bin:$PATH"
 
