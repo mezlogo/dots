@@ -51,7 +51,7 @@
     "<C-c>": false
   },
   "python.pythonPath": "/usr/bin/python",
-  "python.showStartPage": true,
+  "python.showStartPage": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
