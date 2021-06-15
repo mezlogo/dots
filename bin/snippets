@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
-SNIPPET_REPO="$HOME/exo/snippets"
-SINPPET_BUILD_SCRIPT="$HOME/exo/modules/python/build_snippets.py"
+SNIPPET_REPO="$exo/snippets"
+SINPPET_BUILD_LIST_SCRIPT="$exo/tools/deno/build_snippet_list.ts"
+SINPPET_CONTNENT_SCRIPT="$exo/tools/deno/build_snippet_content.ts"
 
 function fzf_snippet {
   local selected_snippet
   selected_snippet=$(
-    python $SINPPET_BUILD_SCRIPT $SNIPPET_REPO |
+    dr $SINPPET_BUILD_LIST_SCRIPT $SNIPPET_REPO "$SNIPPET_REPO/misc" "$SNIPPET_REPO/ts_deno/src" |
       fzf --preview 'cat --style=numbers --color=always --line-range :500 ~/exo/snippets/{}'
   )
   if [ -n "$selected_snippet" ]; then
-    cat "$SNIPPET_REPO/$selected_snippet" | sed "s/^export\s//g" | xsel -b
+    dr $SINPPET_CONTNENT_SCRIPT $SNIPPET_REPO $selected_snippet | xsel -b
   fi
 }
 

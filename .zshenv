@@ -11,6 +11,7 @@ export PYTHONPATH="$exo/modules/python"
 
 for f in $(find $exo/modules/shell -name '*.sh'); do source "$f"; done
 
+alias dr='deno run -A --unstable --import-map=$exo/data/deno_import_map.json'
 alias ll='ls -alF --color=always'
 alias ls='ls -F --color=always'
 alias vim='nvim'

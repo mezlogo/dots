@@ -1,7 +1,7 @@
 {
   "editor.renderWhitespace": "all",
   "editor.fontSize": 12,
-  "editor.cursorStyle": "block-outline",
+  "editor.cursorStyle": "line",
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDelete": false,
@@ -61,5 +61,10 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "editor.tabSize": 8,
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off"
 }
