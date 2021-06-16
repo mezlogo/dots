@@ -7,7 +7,7 @@ SINPPET_CONTNENT_SCRIPT="$exo/tools/deno/build_snippet_content.ts"
 function fzf_snippet {
   local selected_snippet
   selected_snippet=$(
-    dr $SINPPET_BUILD_LIST_SCRIPT $SNIPPET_REPO "$SNIPPET_REPO/misc" "$SNIPPET_REPO/ts_deno/src" |
+    dr $SINPPET_BUILD_LIST_SCRIPT $SNIPPET_REPO "$SNIPPET_REPO/misc" "$SNIPPET_REPO/ts_deno/src" "$SNIPPET_REPO/js/js_from_ts"  |
       fzf --preview 'cat --style=numbers --color=always --line-range :500 ~/exo/snippets/{}'
   )
   if [ -n "$selected_snippet" ]; then
