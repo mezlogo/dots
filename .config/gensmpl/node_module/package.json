@@ -1,0 +1,5 @@
+{
+  "name": "@mezlogo/mymodule",
+  "main": "index.js",
+  "type": "module"
+}
