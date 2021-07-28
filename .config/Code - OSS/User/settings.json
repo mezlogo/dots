@@ -2,6 +2,9 @@
   "editor.renderWhitespace": "all",
   "editor.fontSize": 12,
   "editor.cursorStyle": "line",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDelete": false,
@@ -66,5 +69,8 @@
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  }
 }
