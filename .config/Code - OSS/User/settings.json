@@ -1,76 +1,68 @@
 {
-  "editor.renderWhitespace": "all",
-  "editor.fontSize": 12,
-  "editor.cursorStyle": "line",
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
-  "workbench.activityBar.visible": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "keyboard.dispatch": "keyCode",
-  "window.menuBarVisibility": "toggle",
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.multiCursorModifier": "alt",
-  "C_Cpp.updateChannel": "Insiders",
-  "debug.onTaskErrors": "debugAnyway",
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "keyboard.dispatch": "keyCode",
+    "window.menuBarVisibility": "toggle",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.multiCursorModifier": "alt",
+    "debug.onTaskErrors": "debugAnyway",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-b>": false,
+        "<C-k>": false,
+        "<C-e>": false,
+        "<C-v>": false,
+        "<C-w>": false,
+        "<C-c>": false
     },
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    }
-  ],
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false,
-    "<C-b>": false,
-    "<C-k>": false,
-    "<C-e>": false,
-    "<C-v>": false,
-    "<C-w>": false,
-    "<C-c>": false
-  },
-  "python.pythonPath": "/usr/bin/python",
-  "python.showStartPage": false,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "debug.javascript.autoAttachFilter": "smart",
-  "clangd.path": "/home/mezlogo/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/12.0.0/clangd_12.0.0/bin/clangd",
-  "editor.largeFileOptimizations": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.tabSize": 8,
-  "editor.insertSpaces": false,
-  "editor.lineNumbers": "on",
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "window.zoomLevel": 1,
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  }
+    "python.pythonPath": "/usr/bin/python",
+    "python.showStartPage": false,
+    "debug.javascript.autoAttachFilter": "smart",
+    "clangd.path": "/home/mezlogo/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/12.0.0/clangd_12.0.0/bin/clangd",
+    "window.zoomLevel": 1,
+    "editor.largeFileOptimizations": true,
+    "editor.fontSize": 12,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.cursorStyle": "line",
+    "editor.detectIndentation": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": true,
+    "prettier.enable": true,
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
+    "prettier.semi": true,
+    "prettier.trailingComma": "es5",
+    "prettier.bracketSpacing": true,
+    "prettier.vueIndentScriptAndStyle": false
 }
