@@ -59,5 +59,8 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.activityBar.visible": false,
     "vetur.format.options.tabSize": 4,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
 }
