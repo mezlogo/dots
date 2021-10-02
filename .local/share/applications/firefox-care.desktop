@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Firefox social profile
-Exec=firefox --class FF_SOCIAL -P social
+Exec=firefox --class FF_CARE -P social
 Icon=firefox
 Terminal=false
 Type=Application
