@@ -9,6 +9,7 @@ export exo="$HOME/exo"
 export BASH_ENV="~/.profile"
 export NODE_MODULE="$exo/modules/node"
 export PYTHONPATH="$exo/modules/python"
+export ASPECTJ="$HOME/tools/aspectj"
 
 for f in $(find $exo/modules/shell -name '*.sh'); do source "$f"; done
 
