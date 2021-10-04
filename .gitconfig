@@ -19,6 +19,3 @@
 [user]
 	email = dmezentsev@marathonbet.ru
 	name = Mezentsev Denis
-[filesystem "Oracle Corporation|11.0.11|/dev/mapper/panbetdir"]
-	timestampResolution = 6000 nanoseconds
-	minRacyThreshold = 3991 microseconds

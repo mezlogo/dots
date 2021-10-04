@@ -33,6 +33,8 @@ exo_path=~/exo
 alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
 repo_pathes="$HOME:$yadm_path $exo_path"
 
+alias docker-compose="docker compose --compatibility"
+
 alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
 alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
