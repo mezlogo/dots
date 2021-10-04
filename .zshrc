@@ -61,6 +61,7 @@ bindkey -M viins '^A' beginning-of-line
 bindkey -M viins '^[.' insert-last-word
 bindkey -M viins '^Q' vi-backward-word
 bindkey -M viins '^F' vi-forward-word
+bindkey -M viins 'jj' vi-cmd-mode
 
 precmd() {
   GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
