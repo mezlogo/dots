@@ -7,8 +7,10 @@ export VISUAL=nvim
 export exo="$HOME/exo"
 export tools="$HOME/tools"
 
-export CATALINA_HOME=/home/mezlogo/tools/apache-tomcat
-alias tomcat1="CATALINA_BASE=/home/mezlogo/tools/tomcat1 $CATALINA_HOME/bin/catalina.sh"
+export CATALINA_HOME=$tools/apache-tomcat
+alias tomcat1="CATALINA_BASE=$tools/tomcat1 $CATALINA_HOME/bin/catalina.sh"
+alias tomcat_panbetweb="CATALINA_BASE=$exo/any/tomcat_panbetweb $CATALINA_HOME/bin/catalina.sh"
+
 
 export BASH_ENV="~/.profile"
 export NODE_MODULE="$exo/modules/node"
