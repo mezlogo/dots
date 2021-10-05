@@ -1,5 +1,5 @@
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+[[ -e "$XDG_RUNTIME_DIR/docker.sock" ]] && export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 export EDITOR=nvim
 export VISUAL=nvim
