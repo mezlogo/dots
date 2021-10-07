@@ -10,6 +10,7 @@ export tools="$HOME/tools"
 export CATALINA_HOME=$tools/apache-tomcat
 alias tomcat1="CATALINA_BASE=$tools/tomcat1 $CATALINA_HOME/bin/catalina.sh"
 alias tomcat_panbetweb="CATALINA_BASE=$exo/any/tomcat_panbetweb $CATALINA_HOME/bin/catalina.sh"
+alias tomcat_ee_sandbox="CATALINA_BASE=$exo/any/ee_sanbox/tomcat_ee_sandbox $CATALINA_HOME/bin/catalina.sh"
 
 
 export BASH_ENV="~/.profile"
