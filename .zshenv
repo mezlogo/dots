@@ -30,8 +30,8 @@ alias cat="bat"
 alias jcpy="python $HOME/.local/lib/python3.9/site-packages/jc/cli.py"
 alias newpan="inv -r $HOME/exo/modules/python -c pan_invoke"
 
-
-export PATH="$HOME/tools/apache-maven-3.6.3/bin:$HOME/bin:$exo/tools/bin:$PATH"
+export npm_config_prefix="$HOME/.local"
+export PATH="$HOME/tools/apache-maven-3.6.3/bin:$HOME/bin:$exo/tools/bin:$HOME/.local/bin:$PATH"
 
 export MAVEN_OPTS='-Xmx4G'
 
