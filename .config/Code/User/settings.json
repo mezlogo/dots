@@ -11,7 +11,7 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "update.showReleaseNotes": false,
-    "vim.useSystemClipboard": true,
+    "vim.useSystemClipboard": false,
     "vim.incsearch": true,
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
