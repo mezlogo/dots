@@ -17,5 +17,5 @@
     when = !stat -c %y .git/FETCH_HEAD
     demo = "!f(){ b=$(git rev-parse --abbrev-ref HEAD); bd=\"$b\"_DEMO;         git stash && git branch -D $bd ; git checkout -b $bd origin/master_hotfix             && git log --reverse --pretty=format:\"%H\" origin/master..$b | xargs -L1 git cherry-pick             && git push origin -f $bd && git checkout $b && git stash pop ; };f"
 [user]
-	email = dmezentsev@marathonbet.ru
+	email = mezentsev.d@spb-ifuture.com
 	name = Mezentsev Denis
