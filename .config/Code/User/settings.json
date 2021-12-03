@@ -37,7 +37,7 @@
     "editor.accessibilitySupport": "off",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.foldingImportsByDefault": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.formatOnType": true,
     "editor.minimap.showSlider": "always",
