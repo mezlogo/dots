@@ -7,6 +7,11 @@ export VISUAL=nvim
 export exo="$HOME/exo"
 export tools="$HOME/tools"
 
+alias antlr4='java -jar $HOME/tools/antlr-4.9.2-complete.jar'
+alias grun='java -cp $HOME/tools/antlr-4.9.2-complete.jar org.antlr.v4.gui.TestRig'
+alias solidityParser='java -jar $HOME/exo/study/solidity_lang_app/solidityParser/build/libs/solidityParser.jar'
+alias neo4jImporter='node $exo/study/solidity_lang_app/neo4j_nodejs/index.js'
+
 export CATALINA_HOME=$tools/apache-tomcat
 alias tomcat1="CATALINA_BASE=$tools/tomcat1 $CATALINA_HOME/bin/catalina.sh"
 alias tomcat_panbetweb="CATALINA_BASE=$exo/any/tomcat_panbetweb $CATALINA_HOME/bin/catalina.sh"

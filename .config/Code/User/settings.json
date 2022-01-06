@@ -8,8 +8,6 @@
     "files.trimFinalNewlines": true,
     "workbench.startupEditor": "none",
     "window.menuBarVisibility": "toggle",
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
     "update.showReleaseNotes": false,
     "vim.useSystemClipboard": false,
     "vim.incsearch": true,
@@ -60,8 +58,10 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.activityBar.visible": false,
     "vetur.format.options.tabSize": 4,
-    "redhat.telemetry.enabled": false,
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
-    }
+    },
+    "debug.javascript.autoAttachFilter": "always",
+    "editor.largeFileOptimizations": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false
 }
