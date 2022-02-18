@@ -1,3 +1,6 @@
+_SOURCE_EXO="$HOME/exo/sourceit.sh"
+[ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
+
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
 [[ -e "$XDG_RUNTIME_DIR/docker.sock" ]] && export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
