@@ -4,7 +4,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "diffEditor.codeLens": true,
     "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
+    "files.trimTrailingWhitespace": false,
     "files.trimFinalNewlines": true,
     "workbench.startupEditor": "none",
     "window.menuBarVisibility": "toggle",
@@ -37,7 +37,7 @@
     "editor.foldingImportsByDefault": true,
     "editor.formatOnSave": false,
     "editor.formatOnSaveMode": "modificationsIfAvailable",
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.minimap.showSlider": "always",
     "editor.bracketPairColorization.enabled": true,
     "explorer.openEditors.visible": 0,
@@ -57,7 +57,6 @@
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.activityBar.visible": false,
-    "vetur.format.options.tabSize": 4,
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
