@@ -2,7 +2,7 @@ _SOURCE_EXO="$HOME/exo/sourceit.sh"
 [ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
 
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
-[[ -e "$XDG_RUNTIME_DIR/docker.sock" ]] && export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+#[[ -e "$XDG_RUNTIME_DIR/docker.sock" ]] && export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -48,7 +48,7 @@ exo_path=~/exo
 alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
 repo_pathes="$HOME:$yadm_path $exo_path"
 
-alias docker-compose="docker compose --compatibility"
+#alias docker-compose="docker compose --compatibility"
 
 alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
