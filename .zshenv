@@ -15,7 +15,7 @@ alias vi='nvim'
 alias cat="bat"
 
 export npm_config_prefix="$HOME/.local"
-export PATH="$HOME/bin:$exo/tools/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/exo/tools/bin:$HOME/.local/bin:$PATH"
 
 export MAVEN_OPTS='-Xmx4G'
 
