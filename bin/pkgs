@@ -12,7 +12,7 @@
 #- remove orphans AND caches
 #- import: remove installed, but not exported to list AND install declared in list, but does not installed
 
-pkgsList="$HOME/.config/pkgs.list"
+pkgsList="$HOME/.config/pkgs/$(cat /etc/hostname)"
 
 diffPkgs() { comm -$1 -3 <(printInstalled) <(printList) ; }
 
@@ -37,5 +37,6 @@ case "$1" in
     [[ ! -z $(printNotExported) ]] && removeNotExported || echo nothing to remove
     [[ ! -z $(printNotInstalled) ]] && installNotInstalled || echo nothing to install
     ;;
-  "status" | *)  echo -e "explicitly installed, but not exported to list:\n------\n$(printNotExported)\n------\nexported to list, but not installed:\n------\n$(printNotInstalled)" ;;
+  "status")  echo -e "explicitly installed, but not exported to list:\n------\n$(printNotExported)\n------\nexported to list, but not installed:\n------\n$(printNotInstalled)" ;;
+  *) echo "command $1 not found" && exit 1 ;;
 esac
