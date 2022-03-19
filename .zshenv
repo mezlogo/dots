@@ -7,7 +7,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 export BASH_ENV="~/.profile"
-export PYTHONPATH="$exo/modules/python"
 
 alias ll='ls -alF --color=always'
 alias ls='ls -F --color=always'
