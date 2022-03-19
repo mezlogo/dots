@@ -1,1 +1,0 @@
-# c_gcc_template project with shell automation build script

@@ -35,7 +35,7 @@ interval=5
 [volume]
 label=♪
 instance=Master
-command=$HOME/.config/i3blocks/volume.sh
+command=pactl get-sink-volume @DEFAULT_SINK@ | grep -m1 -oP '\d+%' | head -1
 interval=once
 signal=1
 
@@ -52,7 +52,7 @@ interval=10
 [load_average]
 command=cut -d ' ' -f1 /proc/loadavg
 label=
-interval=5
+interval=1
 
 [time]
 command=date '+%H:%M:%S'

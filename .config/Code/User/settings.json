@@ -57,9 +57,6 @@
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.activityBar.visible": false,
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
-    },
     "debug.javascript.autoAttachFilter": "always",
     "editor.largeFileOptimizations": false,
     "editor.unicodeHighlight.ambiguousCharacters": false

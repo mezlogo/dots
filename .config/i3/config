@@ -1,7 +1,7 @@
 set $mod Mod4
 
-bindsym $mod+o exec "amixer -M set Master 5%- ; pkill -RTMIN+1 i3blocks"
-bindsym $mod+p exec "amixer -M set Master 5%+ ; pkill -RTMIN+1 i3blocks"
+bindsym $mod+o exec "pactl set-sink-volume @DEFAULT_SINK@ -5% ; pkill -RTMIN+1 i3blocks"
+bindsym $mod+p exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; pkill -RTMIN+1 i3blocks"
 
 new_window pixel 1
 new_float pixel 1
@@ -120,4 +120,3 @@ client.unfocused        #ffffff #000000 #ffffff #ffffff   #000000
 
 exec "xkbcomp -w 0 ~/.config/xkb/xkbdump $DISPLAY"
 exec "greenclip daemon"
-
