@@ -20,7 +20,6 @@ gnome-system-monitor
 gradle
 i3blocks
 i3-wm
-intellij-idea-community-edition
 jdk11-openjdk
 jdk-openjdk
 jq
@@ -95,7 +94,6 @@ xorg-xlsatoms
 xorg-xlsclients
 xorg-xmodmap
 xorg-xpr
-xorg-xprop
 xorg-xrandr
 xorg-xrdb
 xorg-xrefresh
