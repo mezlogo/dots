@@ -27,3 +27,5 @@ repo_pathes="$HOME:$yadm_path $exo_path"
 alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
 alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
+alias idea="$HOME/tools/idea-IC-213.7172.25/bin/idea.sh"
+
