@@ -33,4 +33,6 @@ alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 alias idea="$HOME/tools/idea-IC-213.7172.25/bin/idea.sh"
 
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
+export PATH="$HOME/.nvm/versions/node/v14.19.1/bin:$PATH"
+
