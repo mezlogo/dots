@@ -16,8 +16,10 @@ alias vim='nvim'
 alias vi='nvim'
 alias cat="bat"
 
-export npm_config_prefix="$HOME/.local"
-export PATH="$HOME/bin:$exo/tools/bin:$HOME/.local/bin:$PATH"
+#export npm_config_prefix="$HOME/.local"
+export PATH="$exo/tools/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 export MAVEN_OPTS='-Xmx4G'
 
@@ -28,5 +30,7 @@ repo_pathes="$HOME:$yadm_path $exo"
 alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
 alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
+
 alias idea="$HOME/tools/idea-IC-213.7172.25/bin/idea.sh"
 
+source /usr/share/nvm/init-nvm.sh

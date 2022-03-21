@@ -30,8 +30,7 @@ ltrace
 maven363
 mesa
 neovim
-nodejs-lts-fermium
-npm
+nvm
 openconnect
 openjdk11-src
 openjdk-src
@@ -44,6 +43,7 @@ pipewire-pulse
 ripgrep
 rofi
 rofi-greenclip
+rsync
 socat
 strace
 telegram-desktop
