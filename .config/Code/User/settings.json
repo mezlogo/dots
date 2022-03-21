@@ -59,5 +59,6 @@
     "workbench.activityBar.visible": false,
     "debug.javascript.autoAttachFilter": "always",
     "editor.largeFileOptimizations": false,
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "window.zoomLevel": 1
 }
