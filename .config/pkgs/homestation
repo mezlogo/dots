@@ -29,7 +29,6 @@ lsof
 ltrace
 maven363
 mesa
-native-image-jdk11-bin
 neovim
 nvm
 openconnect
