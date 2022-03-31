@@ -11,6 +11,8 @@ chromium
 deepin-screenshot
 dhcpcd
 docker
+drawing
+edk2-ovmf
 element-desktop
 fd
 firefox
@@ -31,6 +33,7 @@ maven363
 mesa
 neovim
 nvm
+obsidian
 openconnect
 openjdk11-src
 openjdk-src
@@ -40,6 +43,7 @@ pavucontrol-qt
 pidgin
 pikaur
 pipewire-pulse
+qemu
 ripgrep
 rofi
 rofi-greenclip
