@@ -13,7 +13,6 @@ dhcpcd
 docker
 edk2-ovmf
 element-desktop
-expac
 fd
 firefox
 fzf
@@ -38,15 +37,13 @@ ltrace
 maven363
 mesa
 neovim
-nmap
 nvm
-obsidian-appimage
+obsidian
 openconnect
 openjdk11-src
 openjdk-src
 openssh
 otf-font-awesome
-p7zip
 pavucontrol-qt
 pidgin
 pikaur
