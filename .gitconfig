@@ -18,5 +18,5 @@
     demo = "!f(){ b=$(git rev-parse --abbrev-ref HEAD); bd=\"$b\"_DEMO;         git stash && git branch -D $bd ; git checkout -b $bd origin/master_hotfix             && git log --reverse --pretty=format:\"%H\" origin/master..$b | xargs -L1 git cherry-pick             && git push origin -f $bd && git checkout $b && git stash pop ; };f"
     featurePush = "!f() { b=$(git branch --show-current); git add . && git commit -m \"$b\" && git push origin $b; };f"
 [user]
-    email = mezentsev.d@spb-ifuture.com
+    email = mezentsev.d@olytechspb.com
     name = Mezentsev Denis

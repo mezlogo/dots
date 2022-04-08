@@ -46,6 +46,8 @@ ripgrep
 rofi
 rofi-greenclip
 rsync
+samba
+smbclient
 socat
 strace
 telegram-desktop

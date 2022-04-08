@@ -36,4 +36,4 @@ alias idea="$HOME/tools/idea-IC-213.7172.25/bin/idea.sh"
 #source /usr/share/nvm/init-nvm.sh
 export PATH="$HOME/.nvm/versions/node/v14.19.1/bin:$PATH"
 
-export GRAALVM_HOME=$HOME/tools/graalvm-ce-java11-22.0.0.2
+export GRAALVM_HOME=$HOME/tools/graalvm-ce-java17-22.0.0.2
