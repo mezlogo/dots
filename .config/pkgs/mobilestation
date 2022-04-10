@@ -24,7 +24,7 @@ i3blocks
 i3-wm
 iwd
 jack2
-jdk-openjdk
+jdk17-openjdk
 jq
 kubectl
 lib32-gnutls
@@ -40,8 +40,6 @@ neovim
 nvm
 obsidian
 openconnect
-openjdk11-src
-openjdk-src
 openssh
 otf-font-awesome
 pavucontrol-qt

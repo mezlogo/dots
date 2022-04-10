@@ -22,7 +22,7 @@ gnome-system-monitor
 gradle
 i3blocks
 i3-wm
-jdk-openjdk
+jdk17-openjdk
 jq
 linux-zen
 linux-zen-headers
@@ -34,7 +34,6 @@ neovim
 nvm
 obsidian
 openconnect
-openjdk-src
 openssh
 otf-font-awesome
 pavucontrol-qt
