@@ -82,3 +82,29 @@ copy-to-xsel() {
 }; zle -N copy-to-xsel
 bindkey -M viins "^Y" copy-to-xsel
 
+source /usr/share/fzf/completion.zsh
+
+# insert file selected by fzf
+__fzf_select_file() {
+  local find_files="fd -t f"
+  local find_dirs="fd -t d"
+  fzf_cmd="fzf --preview 'bat -f {}' --prompt 'f> ' --header 'ctrl-d: dirs / ctrl-f: files' --bind 'ctrl-d:change-prompt(d> )+reload(fd -t d)+change-preview(ls -al {})' --bind 'ctrl-f:change-prompt(f> )+reload(fd -t f)+change-preview(bat -f {})'"
+  setopt localoptions pipefail no_aliases 2> /dev/null
+  eval "$find_files" | eval "$fzf_cmd" | while read item; do
+    echo -n "$item"
+  done
+  local ret=$?
+  echo
+  return $ret
+}
+
+fzf-file-widget() {
+  LBUFFER="${LBUFFER}$(__fzf_select_file)"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle     -N            fzf-file-widget
+bindkey -M emacs '^T' fzf-file-widget
+bindkey -M vicmd '^T' fzf-file-widget
+bindkey -M viins '^T' fzf-file-widget
