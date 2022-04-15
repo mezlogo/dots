@@ -1,0 +1,6 @@
+[Desktop Entry]
+#Exec=bash -ic 'ret_value=$(cat $HOME/exo/data/bookmarks.txt | fzf); [ -z "$ret_value" ] || { echo "Ok: $ret_value" } ; read'
+Exec=bash -ic 'ret_value=$(cat $HOME/exo/data/bookmarks.txt | fzf); if [ ! -z "$ret_value" ]; then echo ${ret_value/\#\#\#*/} | xsel -b; fi'
+Name=Bookmarks
+Terminal=true
+Type=Application
