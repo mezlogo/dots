@@ -4,6 +4,7 @@ antibody
 autojump
 base
 bat
+blueman
 bluez-qt
 bluez-utils
 brave-bin
@@ -16,6 +17,7 @@ edk2-ovmf
 element-desktop
 fd
 firefox
+freerdp
 fzf
 git
 gnome-system-monitor
@@ -41,7 +43,8 @@ pavucontrol-qt
 pidgin
 pikaur
 pipewire-pulse
-qemu
+qemu-desktop
+remmina
 ripgrep
 rofi
 rofi-greenclip
