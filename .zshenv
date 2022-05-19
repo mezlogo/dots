@@ -1,4 +1,3 @@
-
 export SSH_AUTH_SOCK=/tmp/ssh-agent.socket
 
 export EDITOR=nvim
@@ -33,7 +32,6 @@ alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 alias idea="$HOME/tools/idea-IC-213.7172.25/bin/idea.sh"
 
-#source /usr/share/nvm/init-nvm.sh
-export PATH="$HOME/.nvm/versions/node/v14.19.1/bin:$PATH"
+export PATH="$HOME/tools/node/bin:$PATH"
 
 export GRAALVM_HOME=$HOME/tools/graalvm-ce-java17-22.0.0.2
