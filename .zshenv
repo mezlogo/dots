@@ -30,7 +30,7 @@ alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
 alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
-alias idea="$HOME/tools/idea-IC-213.7172.25/bin/idea.sh"
+alias idea="$HOME/tools/idea/bin/idea.sh"
 
 export PATH="$HOME/tools/node/bin:$PATH"
 
