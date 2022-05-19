@@ -1,9 +1,11 @@
 alacritty
 amd-ucode
-antibody
+antibody-bin
+arandr
 autojump
 base
 bat
+blueman
 bluez-qt
 bluez-utils
 brave-bin
@@ -47,7 +49,7 @@ pavucontrol-qt
 pidgin
 pikaur
 pipewire-pulse
-qemu
+qemu-desktop
 ripgrep
 rofi
 rofi-greenclip
