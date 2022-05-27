@@ -4,20 +4,15 @@ antibody-bin
 autojump
 base
 bat
-blueman
-bluez-qt
 bluez-utils
 brave-bin
 chromium
 deepin-screenshot
-dhcpcd
 docker
-drawing
 edk2-ovmf
 element-desktop
 fd
 firefox
-freerdp
 fzf
 git
 gnome-system-monitor
@@ -39,6 +34,7 @@ openconnect
 openjdk17-src
 openssh
 otf-font-awesome
+pacman-contrib
 pavucontrol-qt
 pidgin
 pikaur
@@ -49,8 +45,6 @@ ripgrep
 rofi
 rofi-greenclip
 rsync
-samba
-smbclient
 socat
 strace
 telegram-desktop
