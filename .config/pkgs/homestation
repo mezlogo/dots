@@ -6,6 +6,7 @@ base
 bat
 bluez-utils
 brave-bin
+btop
 chromium
 deepin-screenshot
 docker
@@ -45,6 +46,7 @@ ripgrep
 rofi
 rofi-greenclip
 rsync
+samba
 socat
 strace
 telegram-desktop
