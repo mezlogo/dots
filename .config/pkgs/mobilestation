@@ -7,8 +7,10 @@ base
 bat
 bluez-utils
 brave-bin
+btop
 chromium
 deepin-screenshot
+dhcpcd
 docker
 edk2-ovmf
 element-desktop
@@ -24,6 +26,7 @@ i3-wm
 iwd
 jdk17-openjdk
 jq
+light
 linux-firmware
 linux-zen
 linux-zen-headers
