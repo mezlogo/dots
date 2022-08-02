@@ -32,6 +32,4 @@ alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 alias idea="$HOME/tools/idea/bin/idea.sh"
 
-export PATH="$HOME/tools/node/bin:$PATH"
-
 export GRAALVM_HOME=$HOME/tools/graalvm-ce-java17-22.0.0.2

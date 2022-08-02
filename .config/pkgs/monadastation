@@ -15,6 +15,7 @@ dhcpcd
 docker
 edk2-ovmf
 element-desktop
+envycontrol
 fd
 firefox
 freerdp
@@ -37,7 +38,7 @@ ltrace
 maven363
 mesa
 neovim
-nvm
+node14
 obsidian
 openconnect
 openjdk17-src
@@ -48,6 +49,7 @@ pavucontrol-qt
 pidgin
 pikaur
 pipewire-pulse
+powertop
 pyalpm
 qemu-desktop
 remmina

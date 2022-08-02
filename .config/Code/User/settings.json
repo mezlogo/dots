@@ -60,5 +60,6 @@
     "debug.javascript.autoAttachFilter": "always",
     "editor.largeFileOptimizations": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 2
 }
