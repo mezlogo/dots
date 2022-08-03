@@ -38,7 +38,8 @@ ltrace
 maven363
 mesa
 neovim
-node14
+nodejs-lts-fermium
+npm
 obsidian
 openconnect
 openjdk17-src
