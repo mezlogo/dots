@@ -6,7 +6,7 @@ export VISUAL=nvim
 export BASH_ENV="~/.profile"
 export exo=$HOME/exo
 
-_SOURCE_EXO="$exo/sourceit.sh"
+_SOURCE_EXO="$exo/config/sourceit.sh"
 [ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
 
 alias ll='ls -alF --color=always'
@@ -15,8 +15,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias cat="bat"
 
-#export npm_config_prefix="$HOME/.local"
-export PATH="$exo/tools/bin:$PATH"
+export PATH="$exo/projects/tools/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
@@ -31,5 +30,3 @@ alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
 alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 alias idea="$HOME/tools/idea/bin/idea.sh"
-
-export GRAALVM_HOME=$HOME/tools/graalvm-ce-java17-22.0.0.2

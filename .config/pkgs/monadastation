@@ -40,6 +40,8 @@ mesa
 neovim
 nodejs-lts-fermium
 npm
+nvidia-dkms
+nvidia-settings
 obsidian
 openconnect
 openjdk17-src
