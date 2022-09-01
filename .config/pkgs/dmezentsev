@@ -1,12 +1,10 @@
 alacritty
-amd-ucode
+intel-ucode
 antibody-bin
 arandr
 autojump
 base
 bat
-bluez
-bluez-utils
 brave-bin
 btop
 chromium
@@ -15,6 +13,7 @@ dhcpcd
 docker
 edk2-ovmf
 element-desktop
+envycontrol
 fd
 firefox
 freerdp
@@ -25,10 +24,8 @@ gradle
 htop
 i3blocks
 i3-wm
-iwd
 jdk17-openjdk
 jq
-light
 linux-firmware
 linux-zen
 linux-zen-headers
@@ -37,7 +34,10 @@ ltrace
 maven363
 mesa
 neovim
-nvm
+nodejs-lts-fermium
+npm
+nvidia-dkms
+nvidia-settings
 obsidian
 openconnect
 openjdk17-src
@@ -48,6 +48,8 @@ pavucontrol-qt
 pidgin
 pikaur
 pipewire-pulse
+powertop
+pyalpm
 qemu-desktop
 remmina
 ripgrep
