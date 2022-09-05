@@ -13,13 +13,11 @@ dhcpcd
 docker
 edk2-ovmf
 element-desktop
-envycontrol
 fd
 firefox
 freerdp
 fzf
 git
-gnome-system-monitor
 gradle
 htop
 i3blocks
@@ -36,8 +34,6 @@ mesa
 neovim
 nodejs-lts-fermium
 npm
-nvidia-dkms
-nvidia-settings
 obsidian
 openconnect
 openjdk17-src
@@ -45,10 +41,8 @@ openssh
 otf-font-awesome
 pacman-contrib
 pavucontrol-qt
-pidgin
 pikaur
 pipewire-pulse
-powertop
 pyalpm
 qemu-desktop
 remmina
