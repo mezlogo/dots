@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=bash -ic 'ret_value=$(cat $HOME/exo/data/bookmarks.txt | fzf --preview "val={}; echo \${val/\#\#\#*/}" --header "select a bookmark to copy" --preview-window "bottom:20%" --info inline); if [ ! -z "$ret_value" ]; then echo ${ret_value/\#\#\#*/} | xsel -b; fi'
+Exec=bash -ic 'ret_value=$(cat $HOME/exo/config/bookmarks.txt | fzf --preview "val={}; echo \${val/\#\#\#*/}" --header "select a bookmark to copy" --preview-window "bottom:20%" --info inline); if [ ! -z "$ret_value" ]; then echo ${ret_value/\#\#\#*/} | xsel -b; fi'
 Name=Bookmarks
 Terminal=true
 Type=Application
