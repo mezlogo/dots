@@ -108,3 +108,9 @@ zle     -N            fzf-file-widget
 bindkey -M emacs '^T' fzf-file-widget
 bindkey -M vicmd '^T' fzf-file-widget
 bindkey -M viins '^T' fzf-file-widget
+
+bindkey -M vicmd '^q' accept-and-hold
+bindkey -M viins '^q' accept-and-hold
+
+_SOURCE_EXO="$exo/config/sourceit.sh"
+[ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
