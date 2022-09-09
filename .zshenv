@@ -30,3 +30,5 @@ alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
 alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 alias idea="$HOME/tools/idea/bin/idea.sh"
+
+export PANCLI_DEFAULT_PLATFORM="cur1testers"

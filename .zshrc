@@ -16,6 +16,7 @@ unsetopt auto_cd
 setopt globdots
 setopt prompt_subst
 autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
 
 # ===== Completion
 setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word
