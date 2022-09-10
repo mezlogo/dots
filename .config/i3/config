@@ -18,7 +18,7 @@ bindsym $mod+t exec deepin-screenshot
 bindsym $mod+Return exec alacritty -e zsh -c 'tmux new-session -A -s default'
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+x exec alacritty -e sh -c "greenclip print | fzf -e | sed 's/\xC2\xA0/\x0A/g' | xsel -b"
+bindsym $mod+x exec alacritty -e sh -c "greenclip print | fzf -e | sed 's/\xC2\xA0/\x0A/g' | sed -z '$ s/\n$//' | xsel -b"
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
