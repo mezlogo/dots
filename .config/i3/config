@@ -76,22 +76,19 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [class="FF_DEFAULT"] $workspace1
 assign [class="FF_CARE"] $workspace3
-assign [class="FF_WORK"] $workspace4
-assign [class="Pidgin"] $workspace9
-assign [class="Thunderbird"] $workspace9
 assign [class="jetbrains-idea"] $workspace0
 
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    set $step 200
+    bindsym h resize shrink width $step px or $step ppt
+    bindsym j resize grow height $step px or $step ppt
+    bindsym k resize shrink height $step px or $step ppt
+    bindsym l resize grow width $step px or $step ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
