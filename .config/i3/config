@@ -3,8 +3,10 @@ set $mod Mod4
 bindsym $mod+o exec "pactl set-sink-volume @DEFAULT_SINK@ -5% ; pkill -RTMIN+1 i3blocks"
 bindsym $mod+p exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; pkill -RTMIN+1 i3blocks"
 
-new_window pixel 1
-new_float pixel 1
+# https://gist.github.com/lirenlin/9892945
+default_floating_border pixel 1
+default_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 font pango:DejaVuSansMono 14
 
@@ -92,6 +94,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+title_align left
+#default_border none
 
 bar {
     status_command i3blocks
