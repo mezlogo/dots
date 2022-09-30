@@ -26,6 +26,7 @@ gradle
 htop
 i3blocks
 i3-wm
+inotify-tools
 iwd
 jdk17-openjdk
 jq
