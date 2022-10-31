@@ -61,7 +61,6 @@
     "editor.largeFileOptimizations": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 2,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -73,5 +72,6 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "window.zoomLevel": 2
 }
