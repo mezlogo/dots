@@ -27,7 +27,7 @@ export MAVEN_OPTS='-Xmx4G'
 
 yadm_path=$HOME/.dots.git
 alias yadm='git --work-tree=$HOME --git-dir=$yadm_path'
-repo_pathes="$HOME:$yadm_path $exo"
+repo_pathes="$HOME:$yadm_path $EXO"
 
 alias gst="mygit status $repo_pathes"
 alias gimprt="mygit fetch $repo_pathes && mygit rebase $repo_pathes"
