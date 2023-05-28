@@ -122,3 +122,4 @@ client.unfocused        #ffffff #000000 #ffffff #ffffff   #000000
 
 exec "xkbcomp -w 0 ~/.config/xkb/xkbdump $DISPLAY"
 exec "greenclip daemon"
+exec "dunst"
