@@ -4,10 +4,10 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 export BASH_ENV="~/.profile"
-export exo=$HOME/exo
 
-_SOURCE_EXO="$exo/config/sourceit.sh"
-[ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
+export EXO="$HOME/exo" 
+exo_env="$EXO/config/shell/sourceit.sh"
+[ -e "$exo_env" ] && source "$exo_env"
 
 alias ll='ls -alF --color=always'
 alias ls='ls -F --color=always'
@@ -31,5 +31,4 @@ alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 
 alias idea="$HOME/tools/idea/bin/idea.sh"
 
-export PANCLI_DEFAULT_PLATFORM="cur1testers"
 alias pip='python -m pip'

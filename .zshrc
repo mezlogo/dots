@@ -2,8 +2,8 @@ if [ ! -f ~/.zsh_plugins ]; then
     antibody bundle < ~/.zsh_bundles > ~/.zsh_plugins
 fi
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]];
-    then exec startx;
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  exec startx
 fi
 
 alias -g L='| less'
@@ -113,5 +113,5 @@ bindkey -M viins '^T' fzf-file-widget
 bindkey -M vicmd '^q' accept-and-hold
 bindkey -M viins '^q' accept-and-hold
 
-_SOURCE_EXO="$exo/config/sourceit.sh"
-[ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
+# _SOURCE_EXO="$exo/config/sourceit.sh"
+# [ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"
