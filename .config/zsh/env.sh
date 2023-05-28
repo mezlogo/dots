@@ -10,6 +10,12 @@ export EXO="$HOME/exo"
 load_ext() {
     local exo_env="$EXO/config/shell/sourceit.sh"
     [ -e "$exo_env" ] && source "$exo_env"
+
+    local helpers_dir="$HOME/repos/helpers"
+
+    if [ -d "$helpers_dir" ]; then
+        alias archsync="$helpers_dir/archsync/archsync"
+    fi
 }
 
 load_ext
@@ -36,3 +42,5 @@ alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 alias idea="$HOME/tools/idea/bin/idea.sh"
 
 alias pip='python -m pip'
+
+export ARCH_SYNC_PROFILE="notebook_amd_nvidia_xorg"
