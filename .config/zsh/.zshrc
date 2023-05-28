@@ -1,7 +1,3 @@
-# if [ ! -f "$ZDOTDIR/zsh_plugins" ]; then
-#     antibody bundle < "$ZDOTDIR/zsh_plugins.txt" > "$ZDOTDIR/zsh_plugins"
-# fi
-
 function load_plugins() {
   local _antifote_path="/usr/share/zsh-antidote/antidote.zsh"
   if [ -f "$_antifote_path" ]; then
