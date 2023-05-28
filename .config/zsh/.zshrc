@@ -1,11 +1,28 @@
-if [ ! -f ~/.zsh_plugins ]; then
-    antibody bundle < ~/.zsh_bundles > ~/.zsh_plugins
-fi
+# if [ ! -f "$ZDOTDIR/zsh_plugins" ]; then
+#     antibody bundle < "$ZDOTDIR/zsh_plugins.txt" > "$ZDOTDIR/zsh_plugins"
+# fi
+
+function load_plugins() {
+  local _antifote_path="/usr/share/zsh-antidote/antidote.zsh"
+  if [ -f "$_antifote_path" ]; then
+    # source "$_antifote_path"
+    # antidote load "$ZDOTDIR/zsh_plugins.txt"
+    local zsh_plugins="$ZDOTDIR/zsh_plugins"
+    if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+      (
+        source "$_antifote_path"
+        antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+      )
+    fi
+    source ${zsh_plugins}.zsh
+  fi
+}
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec startx
 fi
 
+source "$ZDOTDIR/env.sh"
 alias -g L='| less'
 alias -g W='| wc -l'
 alias -g S='| sort | uniq -c | sort -nr'
@@ -28,8 +45,7 @@ unsetopt menu_complete # do not autoselect the first completion entry
 
 export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
-source ~/.zsh_plugins
+load_plugins
 
 #===HISTORY_BLOCK===
 #turn off ksh-like !!
@@ -48,7 +64,7 @@ unsetopt append_history
 
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+HISTFILE="$ZDOTDIR/zsh_history"
 
 #===PROMPT_BLOCK===
 
