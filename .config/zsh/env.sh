@@ -24,9 +24,15 @@ load_ext
 
 alias ll='ls -alF --color=always'
 alias ls='ls -F --color=always'
-alias vim='nvim'
-alias vi='nvim'
-alias cat="bat"
+
+if ! command -v nvim &> /dev/null ; then
+    alias vim='nvim'
+    alias vi='nvim'
+fi
+
+if ! command -v bat &> /dev/null ; then
+    alias cat="bat"
+fi
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"

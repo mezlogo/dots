@@ -125,5 +125,8 @@ bindkey -M viins '^T' fzf-file-widget
 bindkey -M vicmd '^q' accept-and-hold
 bindkey -M viins '^q' accept-and-hold
 
+exo_rc="$EXO/config/shell/sourceitrc.sh"
+[ -e "$exo_rc" ] && source "$exo_rc"
+
 # _SOURCE_EXO="$exo/config/sourceit.sh"
 # [ -e "$_SOURCE_EXO" ] && source "$_SOURCE_EXO"

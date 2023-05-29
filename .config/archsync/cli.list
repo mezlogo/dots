@@ -4,6 +4,7 @@ btop
 docker
 docker-compose
 fd
+ripgrep
 fzf
 jq
 lsof
