@@ -19,6 +19,8 @@ fi
 
 echo "please do in by hand chsh -s /usr/bin/zsh"
 
+chmod 700 "$HOME/.gnupg"
+
 echo "init download dirs"
 mkdir -p ~/downloads
 ln -Tsf ~/downloads ~/Downloads
