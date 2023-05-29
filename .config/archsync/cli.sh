@@ -9,14 +9,15 @@ if [[ "$TMUX" ]]; then
     /usr/share/tmux-plugin-manager/scripts/update_plugin.sh all
 fi
 
-echo "init default shell"
-current_shell="$(cat /etc/passwd | grep $USER | cut -d ':' -f7)"
-zsh_shell="$(which zsh)"
-if [ "$current_shell" != "$zsh_shell" ]; then
-    echo "current shell: [$current_shell] is not zsh: [$zsh_shell]"
-    chsh -s /usr/bin/zsh
-fi
-sudo ps
+# echo "init default shell"
+# current_shell="$(cat /etc/passwd | grep $USER | cut -d ':' -f7)"
+# zsh_shell="$(which zsh)"
+# if [ "$current_shell" != "$zsh_shell" ]; then
+#     echo "current shell: [$current_shell] is not zsh: [$zsh_shell]"
+#     chsh -s /usr/bin/zsh
+# fi
+
+echo "please do in by hand chsh -s /usr/bin/zsh"
 
 echo "init download dirs"
 mkdir -p ~/downloads
