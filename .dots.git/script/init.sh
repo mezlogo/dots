@@ -5,7 +5,7 @@ DOTS_FROM="$HOME/repos/dots"
 DOTS_TO="$HOME/.dots.git"
 if [[ ! -d "$DOTS_TO" ]]; then
     mkdir -p "$DOTS_TO"
-    mv $DOTS_FROM/.git "$DOTS_TO"
+    cp -vRn $DOTS_FROM/.git/* "$DOTS_TO"
     cp -vRn $DOTS_FROM/* $HOME
 fi
 
