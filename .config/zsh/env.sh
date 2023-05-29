@@ -12,10 +12,12 @@ load_ext() {
     [ -e "$exo_env" ] && source "$exo_env"
 
     local helpers_dir="$HOME/repos/helpers"
-
     if [ -d "$helpers_dir" ]; then
         alias archsync="$helpers_dir/archsync/archsync"
     fi
+
+    local overrides="$ZDOTDIR/override.sh"
+    [ -e "$overrides" ] && source "$overrides"
 }
 
 load_ext
@@ -42,5 +44,3 @@ alias gexprt="mygit commit $repo_pathes && mygit push $repo_pathes"
 alias idea="$HOME/tools/idea/bin/idea.sh"
 
 alias pip='python -m pip'
-
-export ARCH_SYNC_PROFILE="notebook_amd_nvidia_xorg"
