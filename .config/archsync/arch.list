@@ -7,7 +7,6 @@ unrar
 unzip
 pacman-contrib
 expac
-network-manager-applet
 networkmanager
 networkmanager-openconnect
 networkmanager-openvpn
