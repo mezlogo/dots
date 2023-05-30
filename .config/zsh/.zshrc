@@ -14,8 +14,8 @@ function load_plugins() {
   fi
 }
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec startx
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [ -f "$ZDOTDIR/init_display_env.sh" ]; then
+  source "$ZDOTDIR/init_display_env.sh"
 fi
 
 source "$ZDOTDIR/env.sh"
