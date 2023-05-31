@@ -1,8 +1,6 @@
 autojump-rs
 bat
 btop
-docker
-docker-compose
 fd
 ripgrep
 fzf

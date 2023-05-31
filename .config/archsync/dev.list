@@ -4,3 +4,11 @@ openjdk17-src
 jdk17-openjdk
 maven363
 gradle
+docker
+docker-compose
+edk2-ovmf
+libvirt
+qemu-desktop
+virt-manager
+wireshark-qt
+wireshark-cli

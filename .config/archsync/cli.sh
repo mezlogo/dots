@@ -26,8 +26,3 @@ mkdir -p ~/downloads
 ln -Tsf ~/downloads ~/Downloads
 ln -Tsf ~/downloads ~/Desktop
 ln -Tsf ~/downloads ~/Documents
-
-echo "add groups"
-sudo gpasswd -a $USER libvirt
-sudo gpasswd -a $USER wireshark
-sudo gpasswd -a $USER docker
