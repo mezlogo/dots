@@ -1,20 +1,11 @@
 set $mod Mod4
 
+floating_modifier $mod
+
 bindsym $mod+o exec "pactl set-sink-volume @DEFAULT_SINK@ -5% ; pkill -RTMIN+1 i3blocks"
 bindsym $mod+p exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; pkill -RTMIN+1 i3blocks"
 
-# https://gist.github.com/lirenlin/9892945
-default_floating_border pixel 1
-default_border pixel 1
-for_window [class="^.*"] border pixel 1
 
-font pango:DejaVuSansMono 14
-
-focus_follows_mouse no
-popup_during_fullscreen smart
-workspace_auto_back_and_forth yes
-
-floating_modifier $mod
 
 bindsym $mod+t exec flameshot gui ~/Donwloads
 #bindsym $mod+t exec deepin-screenshot
@@ -48,7 +39,6 @@ bindsym $mod+space focus mode_toggle
 
 bindsym $mod+u sticky toggle
 
-hide_edge_borders smart
 
 set $workspace1 "1"
 set $workspace2 "2"
@@ -113,27 +103,47 @@ bindsym $mod+r mode "resize"
 title_align left
 #default_border none
 
+set $white "#ffffff"
+set $gray "#888888"
+set $green "#00ff00"
+set $red "#ff0000"
+set $black "#000000"
+
 bar {
     status_command i3blocks
+    tray_output primary
     position top
     mode hide
     hidden_state hide
     modifier $mod
     colors {
-        background #000000
-        statusline #00FF00
-        separator #77FF77
+        background $black
+        statusline $white
+        separator $green
         #                  border  backgr. text
-        focused_workspace  #000000 #000000 #00ff00
-        active_workspace   #000000 #000000 #bf00ff
-        inactive_workspace #000000 #000000 #ffffff
-        urgent_workspace   #000000 #000000 #00bfff
+        focused_workspace  $green $black $green
+        active_workspace   $white $black $white
+        inactive_workspace $gray  $black $gray
+        urgent_workspace   $red   $black $red
     }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #000000 #00ff00 #ffffff   #00ff00
-client.unfocused        #ffffff #000000 #ffffff #ffffff   #000000
+client.focused          $green  $black #00ff00 #ffffff   #00ff00
+client.focused_inactive #353439 #9FEE00 #7B9F35
+client.unfocused        $white  $black #ffffff #ffffff   $black
+
+default_floating_border pixel 2
+default_border pixel 1
+for_window [floating] border pixel 2
+# for_window [class="^.*"] border pixel 1
+
+font pango:DejaVuSansMono 14
+
+focus_follows_mouse no
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+hide_edge_borders smart
 
 #exec "setup_xrandr.sh"
 exec "xkbcomp -w 0 ~/.config/xkb/xkbdump $DISPLAY"
