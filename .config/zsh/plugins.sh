@@ -1,11 +1,16 @@
 #!/usr/bin/env
 
 function load_plugins() {
+  local zsh_plugins="$ZDOTDIR/zsh_plugins"
+  if [ -f "${zsh_plugins}.zsh" ]; then
+    source ${zsh_plugins}.zsh
+    return 0
+  fi
+
   local _antifote_path="/usr/share/zsh-antidote/antidote.zsh"
   if [ -f "$_antifote_path" ]; then
     # source "$_antifote_path"
     # antidote load "$ZDOTDIR/zsh_plugins.txt"
-    local zsh_plugins="$ZDOTDIR/zsh_plugins"
     if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
       (
         source "$_antifote_path"
