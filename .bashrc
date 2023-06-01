@@ -1,2 +1,3 @@
 shopt -s expand_aliases
-source "$HOME/.zshenv"
+source "$HOME/.shellenv"
+source "$ZDOTDIR/aliases.sh"

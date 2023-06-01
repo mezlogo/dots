@@ -1,6 +1,10 @@
 bindsym $mod+o exec "pactl set-sink-volume @DEFAULT_SINK@ -5% ; pkill -RTMIN+1 i3blocks"
 bindsym $mod+p exec "pactl set-sink-volume @DEFAULT_SINK@ +5% ; pkill -RTMIN+1 i3blocks"
 
+# Backlight control
+bindsym XF86MonBrightnessUp exec xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+bindsym XF86MonBrightnessDown exec xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+
 bindsym --release $mod+t exec --no-startup-id flameshot gui
 bindsym $mod+Return exec alacritty -e zsh -c 'tmux new-session -A -s default'
 bindsym $mod+Shift+q kill
