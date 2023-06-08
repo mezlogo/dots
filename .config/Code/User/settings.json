@@ -34,7 +34,6 @@
     "editor.wordWrap": "on",
     "editor.accessibilitySupport": "off",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.foldingImportsByDefault": true,
     "editor.formatOnSave": false,
     "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.formatOnType": false,
