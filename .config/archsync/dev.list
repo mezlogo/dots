@@ -9,6 +9,7 @@ docker-compose
 edk2-ovmf
 libvirt
 qemu-desktop
+samba
 virt-manager
 wireshark-qt
 wireshark-cli
