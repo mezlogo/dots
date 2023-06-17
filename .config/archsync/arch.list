@@ -11,6 +11,5 @@ networkmanager
 networkmanager-openconnect
 networkmanager-openvpn
 webkit2gtk-4.1
-libwebkit2gtk
 openconnect
 openssh
