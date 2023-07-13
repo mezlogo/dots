@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PATH="/home/mezlogo/tools/node14/bin:$PATH"
+
 export TERMINAL=/usr/bin/alacritty
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
