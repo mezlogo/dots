@@ -76,7 +76,6 @@
         "editor.formatOnType": true
     },
     "git.openRepositoryInParentFolders": "never",
-    "window.zoomLevel": 1,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -85,5 +84,6 @@
     },
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
-    }
+    },
+    "window.zoomLevel": 1
 }
