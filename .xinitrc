@@ -5,4 +5,4 @@ export BROWSER='firefox --class FF_WORK -P work'
 #export GDK_SCALE=2
 xrdb -merge ~/.Xresources
 #xrdb -merge ~/.Xresources_monitor
-exec i3
+#exec i3

@@ -55,7 +55,6 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.activityBar.visible": false,
     "debug.javascript.autoAttachFilter": "always",
     "editor.largeFileOptimizations": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -85,5 +84,7 @@
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
     },
-    "window.zoomLevel": 1
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "window.zoomLevel": 1,
+    "workbench.activityBar.location": "hidden"
 }
